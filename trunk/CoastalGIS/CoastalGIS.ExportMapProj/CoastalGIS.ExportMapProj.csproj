@@ -1,0 +1,242 @@
+﻿<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="3.5">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>9.0.21022</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{93362936-3E50-4165-938D-9AAB9B2C06FE}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>CoastalGIS.ExportMapProj</RootNamespace>
+    <AssemblyName>ExportMapProj</AssemblyName>
+    <StartupObject>
+    </StartupObject>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <UpgradeBackupLocation>
+    </UpgradeBackupLocation>
+    <OldToolsVersion>2.0</OldToolsVersion>
+    <SccProjectName>Svn</SccProjectName>
+    <SccLocalPath>Svn</SccLocalPath>
+    <SccAuxPath>Svn</SccAuxPath>
+    <SccProvider>SubversionScc</SccProvider>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <RegisterForComInterop>true</RegisterForComInterop>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <RegisterForComInterop>true</RegisterForComInterop>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="ESRI.ArcGIS.3DAnalyst, Version=9.3.0.1770, Culture=neutral, PublicKeyToken=8fc3cc631e44ad86" />
+    <Reference Include="ESRI.ArcGIS.ADF, Version=9.3.0.1770, Culture=neutral, PublicKeyToken=8fc3cc631e44ad86, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+    </Reference>
+    <Reference Include="ESRI.ArcGIS.ArcMapUI, Version=9.3.0.1770, Culture=neutral, PublicKeyToken=8fc3cc631e44ad86, processorArchitecture=MSIL" />
+    <Reference Include="ESRI.ArcGIS.AxControls, Version=9.3.0.1770, Culture=neutral, PublicKeyToken=8fc3cc631e44ad86" />
+    <Reference Include="ESRI.ArcGIS.Carto, Version=9.3.0.1770, Culture=neutral, PublicKeyToken=8fc3cc631e44ad86, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+    </Reference>
+    <Reference Include="ESRI.ArcGIS.CartoUI, Version=9.3.0.1770, Culture=neutral, PublicKeyToken=8fc3cc631e44ad86, processorArchitecture=MSIL" />
+    <Reference Include="ESRI.ArcGIS.Controls, Version=9.3.0.1770, Culture=neutral, PublicKeyToken=8fc3cc631e44ad86, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+    </Reference>
+    <Reference Include="ESRI.ArcGIS.DataSourcesGDB, Version=9.3.0.1770, Culture=neutral, PublicKeyToken=8fc3cc631e44ad86, processorArchitecture=MSIL" />
+    <Reference Include="ESRI.ArcGIS.Display, Version=9.3.0.1770, Culture=neutral, PublicKeyToken=8fc3cc631e44ad86, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+    </Reference>
+    <Reference Include="ESRI.ArcGIS.DisplayUI, Version=9.3.0.1770, Culture=neutral, PublicKeyToken=8fc3cc631e44ad86, processorArchitecture=MSIL" />
+    <Reference Include="ESRI.ArcGIS.Framework, Version=9.3.0.1770, Culture=neutral, PublicKeyToken=8fc3cc631e44ad86, processorArchitecture=MSIL" />
+    <Reference Include="ESRI.ArcGIS.Geodatabase, Version=9.3.0.1770, Culture=neutral, PublicKeyToken=8fc3cc631e44ad86, processorArchitecture=MSIL" />
+    <Reference Include="ESRI.ArcGIS.Geometry, Version=9.3.0.1770, Culture=neutral, PublicKeyToken=8fc3cc631e44ad86, processorArchitecture=MSIL" />
+    <Reference Include="ESRI.ArcGIS.GlobeCore, Version=9.3.0.1770, Culture=neutral, PublicKeyToken=8fc3cc631e44ad86" />
+    <Reference Include="ESRI.ArcGIS.Output, Version=9.3.0.1770, Culture=neutral, PublicKeyToken=8fc3cc631e44ad86, processorArchitecture=MSIL" />
+    <Reference Include="ESRI.ArcGIS.OutputUI, Version=9.3.0.1770, Culture=neutral, PublicKeyToken=8fc3cc631e44ad86, processorArchitecture=MSIL" />
+    <Reference Include="ESRI.ArcGIS.PublisherControls, Version=9.3.0.1770, Culture=neutral, PublicKeyToken=8fc3cc631e44ad86, processorArchitecture=MSIL" />
+    <Reference Include="ESRI.ArcGIS.Schematic, Version=9.3.0.1770, Culture=neutral, PublicKeyToken=8fc3cc631e44ad86, processorArchitecture=MSIL" />
+    <Reference Include="ESRI.ArcGIS.System, Version=9.3.0.1770, Culture=neutral, PublicKeyToken=8fc3cc631e44ad86, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+    </Reference>
+    <Reference Include="ESRI.ArcGIS.SystemUI, Version=9.3.0.1770, Culture=neutral, PublicKeyToken=8fc3cc631e44ad86, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+    </Reference>
+    <Reference Include="Janus.Windows.Common.v3, Version=3.5.0.0, Culture=neutral, processorArchitecture=MSIL" />
+    <Reference Include="Janus.Windows.Ribbon.v3, Version=3.5.0.0, Culture=neutral, processorArchitecture=MSIL" />
+    <Reference Include="Janus.Windows.UI.v3, Version=3.5.0.0, Culture=neutral, processorArchitecture=MSIL" />
+    <Reference Include="stdole, Version=7.0.3300.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Design" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Drawing.Design" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="AreaPrintMapClass.cs" />
+    <Compile Include="ChangeFrameBackGround.cs" />
+    <Compile Include="ChangeFrameBorder.cs" />
+    <Compile Include="ChangeFrameShadow.cs" />
+    <Compile Include="ChoseTemple.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ChoseTemple.Designer.cs">
+      <DependentUpon>ChoseTemple.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CmdExoprtMapAsPicture.cs" />
+    <Compile Include="DesignPageLayout.cs" />
+    <Compile Include="Form1.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form1.Designer.cs">
+      <DependentUpon>Form1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmLegendItemSymbol.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmLegendItemSymbol.Designer.cs">
+      <DependentUpon>frmLegendItemSymbol.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmNorthArrowSymbol.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmNorthArrowSymbol.Designer.cs">
+      <DependentUpon>frmNorthArrowSymbol.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmPrintByAnyRegion.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmPrintByAnyRegion.Designer.cs">
+      <DependentUpon>frmPrintByAnyRegion.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmSetMapScale.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmSetMapScale.Designer.cs">
+      <DependentUpon>frmSetMapScale.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmSetResolution.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmSetResolution.Designer.cs">
+      <DependentUpon>frmSetResolution.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmTempleteProperties.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmTempleteProperties.Designer.cs">
+      <DependentUpon>frmTempleteProperties.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Maps.cs" />
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="Form1.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>Form1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TextSymbol.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>TextSymbol.cs</DependentUpon>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <Compile Include="DeleteElement.cs" />
+    <Compile Include="TextSymbol.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="TextSymbol.Designer.cs">
+      <DependentUpon>TextSymbol.cs</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="ChangeFrameBackGround.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="ChangeFrameShadow.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="ChangeFrameBorder.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="DeleteElement.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="frmLegendItemSymbol.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>frmLegendItemSymbol.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmNorthArrowSymbol.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>frmNorthArrowSymbol.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmPrintByAnyRegion.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>frmPrintByAnyRegion.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\licenses.licx" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="CmdExoprtMapAsPicture.bmp" />
+    <EmbeddedResource Include="frmSetResolution.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>frmSetResolution.cs</DependentUpon>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="AreaPrintMapClass.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="AreaPrintMapClass.cur" />
+    <EmbeddedResource Include="ChoseTemple.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>ChoseTemple.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmSetMapScale.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>frmSetMapScale.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmTempleteProperties.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>frmTempleteProperties.cs</DependentUpon>
+    </EmbeddedResource>
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
