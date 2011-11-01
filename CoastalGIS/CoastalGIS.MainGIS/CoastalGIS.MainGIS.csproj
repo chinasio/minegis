@@ -1,0 +1,319 @@
+﻿<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="3.5">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>9.0.21022</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{B9C4165C-43EC-4D43-91D5-AF8EA2E92552}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>CoastalGIS.MainGIS</RootNamespace>
+    <AssemblyName>CoastalGIS.MainGIS</AssemblyName>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <UpgradeBackupLocation>
+    </UpgradeBackupLocation>
+    <OldToolsVersion>2.0</OldToolsVersion>
+    <SccProjectName>Svn</SccProjectName>
+    <SccLocalPath>Svn</SccLocalPath>
+    <SccAuxPath>Svn</SccAuxPath>
+    <SccProvider>SubversionScc</SccProvider>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <PlatformTarget>x86</PlatformTarget>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="CoastalGIS.CallMap, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\CoastalGIS.CallMap\bin\Debug\CoastalGIS.CallMap.dll</HintPath>
+    </Reference>
+    <Reference Include="CoastalGIS.Common, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\CoastalGIS.Common\bin\Debug\CoastalGIS.Common.dll</HintPath>
+    </Reference>
+    <Reference Include="CoastalGIS.MapEditing, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\CoastalGIS.MapEditing\bin\Debug\CoastalGIS.MapEditing.dll</HintPath>
+    </Reference>
+    <Reference Include="CoastalGIS.SizeEvaluation, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\CoastalGIS.SizeEvaluation\bin\Debug\CoastalGIS.SizeEvaluation.dll</HintPath>
+    </Reference>
+    <Reference Include="CoastalGIS.SpatialDataBase, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\CoastalGIS.SpatialDataBase\bin\Debug\CoastalGIS.SpatialDataBase.dll</HintPath>
+    </Reference>
+    <Reference Include="ESRI.ArcGIS.3DAnalyst, Version=9.3.0.1770, Culture=neutral, PublicKeyToken=8fc3cc631e44ad86" />
+    <Reference Include="ESRI.ArcGIS.ADF, Version=9.3.0.1770, Culture=neutral, PublicKeyToken=8fc3cc631e44ad86, processorArchitecture=MSIL" />
+    <Reference Include="ESRI.ArcGIS.Analyst3DTools, Version=9.3.0.1770, Culture=neutral, PublicKeyToken=8fc3cc631e44ad86, processorArchitecture=MSIL" />
+    <Reference Include="ESRI.ArcGIS.AxControls, Version=9.3.0.1770, Culture=neutral, PublicKeyToken=8fc3cc631e44ad86" />
+    <Reference Include="ESRI.ArcGIS.Carto, Version=9.3.0.1770, Culture=neutral, PublicKeyToken=8fc3cc631e44ad86" />
+    <Reference Include="ESRI.ArcGIS.Controls, Version=9.3.0.1770, Culture=neutral, PublicKeyToken=8fc3cc631e44ad86" />
+    <Reference Include="ESRI.ArcGIS.DataSourcesFile, Version=9.3.0.1770, Culture=neutral, PublicKeyToken=8fc3cc631e44ad86, processorArchitecture=MSIL" />
+    <Reference Include="ESRI.ArcGIS.DataSourcesGDB, Version=9.3.0.1770, Culture=neutral, PublicKeyToken=8fc3cc631e44ad86, processorArchitecture=MSIL" />
+    <Reference Include="ESRI.ArcGIS.DataSourcesRaster, Version=9.3.0.1770, Culture=neutral, PublicKeyToken=8fc3cc631e44ad86, processorArchitecture=MSIL" />
+    <Reference Include="ESRI.ArcGIS.Display, Version=9.3.0.1770, Culture=neutral, PublicKeyToken=8fc3cc631e44ad86" />
+    <Reference Include="ESRI.ArcGIS.DisplayUI">
+      <HintPath>..\..\..\..\..\Program Files\ArcGIS\DotNet\ESRI.ArcGIS.DisplayUI.dll</HintPath>
+    </Reference>
+    <Reference Include="ESRI.ArcGIS.Geodatabase, Version=9.3.0.1770, Culture=neutral, PublicKeyToken=8fc3cc631e44ad86, processorArchitecture=MSIL" />
+    <Reference Include="ESRI.ArcGIS.Geometry, Version=9.3.0.1770, Culture=neutral, PublicKeyToken=8fc3cc631e44ad86" />
+    <Reference Include="ESRI.ArcGIS.Geoprocessor, Version=9.3.0.1770, Culture=neutral, PublicKeyToken=8fc3cc631e44ad86, processorArchitecture=MSIL" />
+    <Reference Include="ESRI.ArcGIS.GlobeCore, Version=9.3.0.1770, Culture=neutral, PublicKeyToken=8fc3cc631e44ad86" />
+    <Reference Include="ESRI.ArcGIS.Output, Version=9.3.0.1770, Culture=neutral, PublicKeyToken=8fc3cc631e44ad86" />
+    <Reference Include="ESRI.ArcGIS.SampleTools, Version=9.3.0.1770, Culture=neutral, PublicKeyToken=8fc3cc631e44ad86, processorArchitecture=MSIL" />
+    <Reference Include="ESRI.ArcGIS.System, Version=9.3.0.1770, Culture=neutral, PublicKeyToken=8fc3cc631e44ad86" />
+    <Reference Include="ESRI.ArcGIS.SystemUI, Version=9.3.0.1770, Culture=neutral, PublicKeyToken=8fc3cc631e44ad86" />
+    <Reference Include="ESRI.ArcGIS.Utility, Version=9.3.0.1770, Culture=neutral, PublicKeyToken=8fc3cc631e44ad86, processorArchitecture=MSIL" />
+    <Reference Include="ExportMapProj, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\CoastalGIS.ExportMapProj\bin\Debug\ExportMapProj.dll</HintPath>
+    </Reference>
+    <Reference Include="Janus.Data.v3, Version=3.5.0.0, Culture=neutral, PublicKeyToken=null" />
+    <Reference Include="Janus.Windows.Common.v3, Version=3.5.0.0, Culture=neutral, PublicKeyToken=null" />
+    <Reference Include="Janus.Windows.GridEX.v3, Version=3.5.0.0, Culture=neutral, processorArchitecture=MSIL" />
+    <Reference Include="Janus.Windows.Ribbon.v3, Version=3.5.0.0, Culture=neutral, processorArchitecture=MSIL" />
+    <Reference Include="Janus.Windows.UI.v3, Version=3.5.0.0, Culture=neutral, processorArchitecture=MSIL" />
+    <Reference Include="stdole, Version=7.0.3300.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+    <Reference Include="System" />
+    <Reference Include="System.configuration" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Data.OracleClient" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Design" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="ChildForm\BufferForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ChildForm\BufferForm.designer.cs">
+      <DependentUpon>BufferForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ChildForm\frmAbout.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ChildForm\frmAbout.Designer.cs">
+      <DependentUpon>frmAbout.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ChildForm\frmCacu.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ChildForm\frmCacu.Designer.cs">
+      <DependentUpon>frmCacu.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ChildForm\frmCacuIndex.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ChildForm\frmCacuIndex.Designer.cs">
+      <DependentUpon>frmCacuIndex.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ChildForm\frmCellStat.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ChildForm\frmCellStat.Designer.cs">
+      <DependentUpon>frmCellStat.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ChildForm\frmDis.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ChildForm\frmDis.Designer.cs">
+      <DependentUpon>frmDis.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ChildForm\frmFieldName.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ChildForm\frmFieldName.Designer.cs">
+      <DependentUpon>frmFieldName.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ChildForm\frmTip.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ChildForm\frmTip.Designer.cs">
+      <DependentUpon>frmTip.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ChildForm\frmType.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ChildForm\frmType.Designer.cs">
+      <DependentUpon>frmType.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ChildForm\OverLayerForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ChildForm\OverLayerForm.designer.cs">
+      <DependentUpon>OverLayerForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ChildForm\SelectByAttributes.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ChildForm\SelectByAttributes.designer.cs">
+      <DependentUpon>SelectByAttributes.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ChildForm\SelectByLocation.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ChildForm\SelectByLocation.designer.cs">
+      <DependentUpon>SelectByLocation.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Class\AddCADToFeatures.cs" />
+    <Compile Include="Class\AddCADToRaster.cs" />
+    <Compile Include="Class\AreaPrintMapClass.cs" />
+    <Compile Include="Class\ControlsSynchronizer.cs" />
+    <Compile Include="Class\AppConfig.cs" />
+    <Compile Include="Class\FlashFeature.cs" />
+    <Compile Include="Class\frmRasCau.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Class\frmRasCau.Designer.cs">
+      <DependentUpon>frmRasCau.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Class\LayerDataTable.cs" />
+    <Compile Include="Class\Maps.cs" />
+    <Compile Include="Class\SplashAppContext.cs" />
+    <Compile Include="Class\TextToShapefile.cs" />
+    <Compile Include="Class\ToolLib.cs" />
+    <Compile Include="Class\CreateNewDocument.cs" />
+    <Compile Include="Class\CreateLayerM.cs" />
+    <Compile Include="frmMain.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmMain.Designer.cs">
+      <DependentUpon>frmMain.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmSpalash.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmSpalash.Designer.cs">
+      <DependentUpon>frmSpalash.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="ChildForm\BufferForm.resx">
+      <DependentUpon>BufferForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ChildForm\frmAbout.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>frmAbout.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ChildForm\frmCacu.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>frmCacu.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ChildForm\frmCacuIndex.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>frmCacuIndex.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ChildForm\frmCellStat.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>frmCellStat.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ChildForm\frmDis.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>frmDis.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ChildForm\frmFieldName.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>frmFieldName.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ChildForm\frmTip.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>frmTip.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ChildForm\frmType.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>frmType.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ChildForm\OverLayerForm.resx">
+      <DependentUpon>OverLayerForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ChildForm\SelectByAttributes.resx">
+      <DependentUpon>SelectByAttributes.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ChildForm\SelectByLocation.resx">
+      <DependentUpon>SelectByLocation.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Class\frmRasCau.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>frmRasCau.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmMain.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>frmMain.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmSpalash.resx">
+      <DependentUpon>frmSpalash.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\licenses.licx" />
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <None Include="App.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Image\Back.png" />
+    <Content Include="Image\database1.bmp" />
+    <Content Include="Image\database2.bmp" />
+    <Content Include="Image\DataSource.png" />
+    <Content Include="Image\Delete.png" />
+    <Content Include="Image\DS.png" />
+    <Content Include="Image\Find.png" />
+    <Content Include="Image\layers_2.bmp" />
+    <Content Include="Image\Points.bmp" />
+    <Content Include="Image\Polygon.bmp" />
+    <Content Include="Image\Polyline.bmp" />
+    <Content Include="Image\Raster.jpg" />
+    <None Include="Resources\Open.jpg" />
+    <None Include="Resources\启动画面.jpg" />
+    <None Include="Resources\红色.jpg" />
+    <None Include="Resources\未命名.bmp" />
+    <None Include="Resources\10779588_2200181.jpg" />
+    <None Include="Resources\10779588_220018.jpg" />
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
