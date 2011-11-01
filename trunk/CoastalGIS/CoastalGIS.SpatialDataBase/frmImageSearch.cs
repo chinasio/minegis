@@ -8,7 +8,6 @@ using System.Windows.Forms;
 using System.Data.OleDb;
 using System.IO;
 
-
 namespace CoastalGIS.SpatialDataBase
 {
     public partial class frmImageSearch : Form

@@ -747,7 +747,7 @@ namespace CoastalGIS.SpatialDataBase
             }
         }
 
-        public void InsertMataData(string name,string shapetype,string type,string table) 
+        public void InsertMataData(string name,string shapetype,string type,string table,string place) 
         {
             if (this.m_oraCmd != null&&table=="1") 
             {
@@ -757,11 +757,19 @@ namespace CoastalGIS.SpatialDataBase
             }
             if (this.m_oraCmd != null && table == "2") 
             {
-                string sqlText = "insert into IMAGEMETADATA (IMAGENAME,SATELITE,[TIME]) values('" + name + "','" + shapetype + "','" + type + "')";
+                string sqlText = "insert into IMAGEMETADATA (IMAGENAME,SATELITE,[TIME],[PLACE]) values('" + name + "','" + shapetype + "','" + type + "','"+place+"')";
                 m_oraCmd.CommandText = sqlText;
                 m_oraCmd.ExecuteNonQuery();
             }
         }
+
+        public void InsertInterpData(string shapetype, string place, string time,string type)
+        {
+            string sqlText = "insert into interpdata ([GEOMETRY],[PLACE],[YEARDATE],[TYPE]) values('" + shapetype + "','" + place + "','" + time + "','" + type + "')";
+            m_oraCmd.CommandText = sqlText;
+            m_oraCmd.ExecuteNonQuery();
+        }
+
 
         public void ExportToSHP(string name,string outputPath) 
         {
@@ -880,8 +888,6 @@ namespace CoastalGIS.SpatialDataBase
             try
             {
                 newRasterDataset = pRasterWorkspaceEx.CreateRasterDataset(name, numbands, pPixelType, pRasterStorageDef, "", pRasterDef, this.createGeometryDef(pSpatialReference));
-
-               // newRasterDataset = pRasterWorkspaceEx.CreateRasterDataset(name, "IMAGINE Image", pOrigin, 100, 100, 30, 30, 1, rstPixelType.PT_LONG, pSpatialReference, true);
                 return newRasterDataset;
             }
             catch (Exception ex)
@@ -923,7 +929,7 @@ namespace CoastalGIS.SpatialDataBase
             geometryDefEdit.AvgNumPoints_2 = 4;
             //设置空间索引的层数
             geometryDefEdit.GridCount_2 = 1;
-            //geometryDefEdit.set_GridSize(0, 1000);
+            geometryDefEdit.set_GridSize(0, 1000);
 
             // Set unknown spatial reference is not set
             if (spatialReference == null)
@@ -937,12 +943,59 @@ namespace CoastalGIS.SpatialDataBase
 
         public void ImportRas(IRasterDataset rasDS,string name) 
         {
-            IRasterDataset rasdsSDE = this.CreateRasterDataset(ref rasDS, name, ref this.m_workSpace, this.GetSRFromFeatureDataset((IDataset)rasDS));
+            IRasterDataset rasdsSDE = this.CreateRasterDataset(ref rasDS, name, ref this.m_workSpace, new UnknownCoordinateSystemClass());
             if (rasdsSDE != null) 
             {
                 this.MosaicRasterToGDBRaster(rasDS, (IRasterDatasetEdit)rasdsSDE);
             }
            
+        }
+
+        public void CreateFeaInSDE(string name) 
+        {
+            IFields pFields = new FieldsClass();
+            IFieldsEdit pFieldsEdit = pFields as IFieldsEdit;
+            IField pField = new FieldClass();
+            IFieldEdit pFieldEdit ;
+
+            pField = new FieldClass();
+            pFieldEdit=pField as IFieldEdit;
+            pFieldEdit.Name_2 = "OBJECTID";
+            pFieldEdit.Type_2 = esriFieldType.esriFieldTypeOID;
+            pFieldsEdit.AddField(pField);
+            
+            pField = new FieldClass();
+            pFieldEdit=pField as IFieldEdit;
+            pFieldEdit.Name_2 = "SHAPE";
+            pFieldEdit.Type_2 = esriFieldType.esriFieldTypeGeometry;
+            IGeometryDef pGeometryDef = new GeometryDefClass();
+            IGeometryDefEdit pGeometryDefEdit = pGeometryDef as IGeometryDefEdit;
+            pGeometryDefEdit.GeometryType_2 = esriGeometryType.esriGeometryPolyline;
+            ISpatialReference spatialRef = new UnknownCoordinateSystemClass();
+            spatialRef.SetDomain(21151314, 21416785, 3497200, 3895222);
+            //spatialRef.SetFalseOriginAndUnits(0, 0, 100000);
+            pGeometryDefEdit.SpatialReference_2 = spatialRef;
+            pFieldEdit.GeometryDef_2 = pGeometryDef;
+            pFieldsEdit.AddField(pField);
+
+            AddSimpleField(pFieldsEdit, esriFieldType.esriFieldTypeString, "PlanID", "围填方案号");
+            AddSimpleField(pFieldsEdit, esriFieldType.esriFieldTypeString, "V_Change_Rate", "水道全潮平均流速最大变化率");
+            AddSimpleField(pFieldsEdit, esriFieldType.esriFieldTypeString, "V_Area", "流速变化范围");
+            AddSimpleField(pFieldsEdit, esriFieldType.esriFieldTypeString, "Change_Rate", "相邻水道流量变化率");
+            AddSimpleField(pFieldsEdit, esriFieldType.esriFieldTypeString, "Silting_Strength", "水道淤积强度");
+            AddSimpleField(pFieldsEdit, esriFieldType.esriFieldTypeString, "Ecological_Service_Lost", "生态服务价值损失");
+            AddSimpleField(pFieldsEdit, esriFieldType.esriFieldTypeString, "Sewage_Discharge", "污水排放量");
+            AddSimpleField(pFieldsEdit, esriFieldType.esriFieldTypeString, "Cultivation_Area", "影像养殖区面积");
+            AddSimpleField(pFieldsEdit, esriFieldType.esriFieldTypeString, "Distance", "缩短岸线与深水区的距离");
+            AddSimpleField(pFieldsEdit, esriFieldType.esriFieldTypeString, "V_Variation", "缩短岸线与深水区的距离");
+            AddSimpleField(pFieldsEdit, esriFieldType.esriFieldTypeString, "Land_Area", "围填海后形成的陆域面积");
+            AddSimpleField(pFieldsEdit, esriFieldType.esriFieldTypeString, "Benifit", "围填海的效益");
+            AddSimpleField(pFieldsEdit, esriFieldType.esriFieldTypeString, "Economic_Output", "围填区的经济产出");
+            AddSimpleField(pFieldsEdit, esriFieldType.esriFieldTypeString, "Increased_Imployment", "围填区可增加的就业人口");
+
+            ((IFeatureWorkspace)m_workSpace).CreateFeatureClass(name, pFields, null, null, esriFeatureType.esriFTSimple, "SHAPE", "");
+
+
         }
 
         private void AddSimpleField(IFieldsEdit fieldsEdit,esriFieldType type,string name,string aliasName) 
@@ -953,26 +1006,6 @@ namespace CoastalGIS.SpatialDataBase
             fieldEdit.Name_2 = name;
             fieldEdit.AliasName_2 = aliasName;
             fieldsEdit.AddField(field);
-        }
-
-        public ISpatialReference GetSRFromFeatureDataset(IDataset pDataset)
-        {
-            IGeoDataset pGeoDataset;
-            if (pDataset is IFeatureDataset)
-            {
-                pGeoDataset = (IFeatureDataset)pDataset as IGeoDataset;
-                return (pGeoDataset.SpatialReference);
-            }
-            else if (pDataset is IRasterDataset)
-            {
-                pGeoDataset = (IRasterDataset)pDataset as IGeoDataset;
-                return (pGeoDataset.SpatialReference);
-            }
-            else
-            {
-                //MessageBox.Show("wrong");
-                return null;
-            }
         }
     }
 }

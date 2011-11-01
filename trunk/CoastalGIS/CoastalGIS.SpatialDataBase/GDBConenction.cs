@@ -18,7 +18,7 @@ namespace CoastalGIS.SpatialDataBase
 
         private string m_fgdbPath;
 
-        private IWorkspaceFactory2 m_workspaceFactory;
+        private IWorkspaceFactory m_workspaceFactory;
         private IWorkspace m_workSpace;
 
         public GDBConenction(string fgdbPath) 

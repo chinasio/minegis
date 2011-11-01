@@ -32,6 +32,7 @@ using CoastalGIS.SpatialDataBase;
 using CoastalGIS.ExportMapProj;
 using CoastalGIS.MapEditing;
 
+//using 遥感功能;
 
 namespace CoastalGIS.MainGIS
 {
@@ -211,6 +212,8 @@ namespace CoastalGIS.MainGIS
 
             //获取主界面进度条
             m_statusBar = this.uiStatusBar1;
+
+
 
             //初始化工具类
             m_toolLib = new ToolLib(m_currentWin);
@@ -523,9 +526,8 @@ namespace CoastalGIS.MainGIS
                 if (m_bSketch)
                 {
                     CreatShape m_CreateShapeSketch = new CreatShape(m_CurrentLayer,this.m_dig);
-                    mapCtlMain.CurrentTool = (ITool)m_CreateShapeSketch;
                     m_CreateShapeSketch.OnCreate(this.mapCtlMain.Object);
-                    //mapCtlMain.CurrentTool = (ITool)m_CreateShapeSketch;
+                    mapCtlMain.CurrentTool = (ITool)m_CreateShapeSketch;
                 }
                 else if (m_bModify)
                 {
@@ -818,6 +820,116 @@ namespace CoastalGIS.MainGIS
                 }
             }
 
+            if (e.Command.Key == "menuIndexCacu") 
+            {
+                frmCacuIndex index = new frmCacuIndex();
+                index.ShowDialog();
+            }
+
+            if (e.Command.Key == "menuSKC")
+            {
+                frmChart chart = new frmChart(this.m_oraCmd);
+                chart.ShowDialog();
+            }
+            //******************************增加----陈*************************************************
+            //if (e.Command.Key == "menuKMEANS")
+            //{
+            //    KMEANS kMEANS = new KMEANS(m_mapControl);
+            //    kMEANS.ShowDialog();
+            //}
+            //if (e.Command.Key == "menuCalibration")
+            //{
+            //    OpenFileDialog openGD = new OpenFileDialog();
+            //    openGD.Filter = "ERDAS格式(*.img)|*.img|所有文件|*.*";
+            //    if (openGD.ShowDialog() == DialogResult.OK)
+            //    {
+            //        string filename = openGD.FileName;
+            //        int bandCount;
+            //        try
+            //        {
+            //            IRasterLayer rasterLayer = new RasterLayerClass();
+            //            rasterLayer.CreateFromFilePath(filename);
+            //            bandCount = rasterLayer.BandCount;
+            //        }
+            //        catch
+            //        {
+            //            MessageBox.Show("输入文件有误");
+            //            return;
+            //        }
+            //        Calibration cali = new Calibration(filename, bandCount, m_mapControl);
+            //        cali.ShowDialog();
+            //    }
+
+            //}
+            //if (e.Command.Key == "menuISODATA")
+            //{
+            //    ISODATA isodata = new ISODATA(m_mapControl);
+            //    isodata.ShowDialog();
+            //}
+            //if (e.Command.Key == "menuNDVI")
+            //{
+            //    NDVI ndvi = new NDVI(m_mapControl);
+            //    ndvi.ShowDialog();
+            //}
+            //if (e.Command.Key == "menuRVI")
+            //{
+            //    RVI rvi = new RVI(m_mapControl);
+            //    rvi.ShowDialog();
+            //}
+            //if (e.Command.Key == "menuSAVI")
+            //{
+            //    SAVI savi = new SAVI(m_mapControl);
+            //    savi.ShowDialog();
+            //}
+            //if (e.Command.Key == "menuVC")
+            //{
+            //    VegCover vegCover = new VegCover(m_mapControl);
+            //    vegCover.ShowDialog();
+            //}
+            //if (e.Command.Key == "menuTemprature")
+            //{
+            //    Temperature temperature = new Temperature(m_mapControl);
+            //    temperature.ShowDialog();
+            //}
+            //if (e.Command.Key == "menuChangeD")
+            //{
+            //    ChangeDetection changeD = new ChangeDetection(m_mapControl);
+            //    changeD.ShowDialog();
+
+            //}
+            //if (e.Command.Key == "menuIce")
+            //{
+            //    IceExtract iceExtract = new IceExtract(m_mapControl);
+            //    iceExtract.ShowDialog();
+            //}
+            //if (e.Command.Key == "menuWater")
+            //{
+            //    WaterExtract waterExtract = new WaterExtract(m_mapControl);
+            //    waterExtract.ShowDialog();
+
+            //}
+            //if (e.Command.Key == "menuHOT")
+            //{
+            //    HOT hot = new HOT(m_mapControl);
+            //    hot.ShowDialog();
+
+            //}
+            //if (e.Command.Key == "menuQAC")
+            //{
+            //    QAC qac = new QAC(m_mapControl);
+            //    qac.ShowDialog();
+            //}
+            //if (e.Command.Key == "menuLUC")
+            //{
+            //    LandUseChange luc = new LandUseChange(m_mapControl);
+            //    luc.ShowDialog();
+            //}
+            //if (e.Command.Key == "menuComposite")
+            //{
+            //    Composite comp = new Composite(m_mapControl);
+            //    comp.ShowDialog();
+            //}
+            //*****************************************************************************************
         }
 
         private void axTOCControl1_OnMouseDown(object sender, ITOCControlEvents_OnMouseDownEvent e)
@@ -831,11 +943,17 @@ namespace CoastalGIS.MainGIS
             {
                 this.OpenAttribute.Enabled = false;
                 this.ClearAttribute.Enabled = false;
-                if (m_layer is IFeatureLayer) 
+                this.SelectBand.Enabled = false;
+                if (m_layer is IFeatureLayer)
                 {
                     this.OpenAttribute.Enabled = true;
                     this.ClearAttribute.Enabled = true;
                 }
+                else 
+                {
+                    this.SelectBand.Enabled = true;
+                }
+
                 System.Drawing.Point point = new System.Drawing.Point(e.x, e.y);
                 this.conMenuTOC.Show(axTOCControl1, point);
             }
@@ -990,16 +1108,24 @@ namespace CoastalGIS.MainGIS
             {
                 if (e.Node.Tag.ToString() == "point" || e.Node.Tag.ToString() == "line" || e.Node.Tag.ToString() == "polygon" ||e.Node.Tag.ToString() == "Annotation")
                 {
-                    feaLyr = m_gdata.AddFeatureClassToMap(e.Node.Text.ToString());
-                    this.mapCtlMain.Map.AddLayer(feaLyr);
+                    if (e.Node.Parent.Tag.ToString() == "PLACE")
+                    {
+                        feaLyr = m_gdata.AddFeatureClassToMap(e.Node.Parent.Text.ToString()+"_" + e.Node.Text.ToString());
+                        feaLyr.Name = e.Node.Text.ToString();
+                        this.mapCtlMain.Map.AddLayer(feaLyr);
+                    }
+                    else 
+                    {
+                        feaLyr = m_gdata.AddFeatureClassToMap(e.Node.Text.ToString());
+                        feaLyr.Name = e.Node.Text.ToString();
+                        this.mapCtlMain.Map.AddLayer(feaLyr);
+                    }
+
                 }
                 if (e.Node.Tag.ToString() == "Raster")
                 {
-                    IWorkspaceFactory rasWF =new RasterWorkspaceFactoryClass();
-
-                    IWorkspace WS = rasWF.OpenFromFile(Application.StartupPath+"\\temp",0);
-                    IRasterWorkspace rasterWS = WS as IRasterWorkspace;
-                    IRasterDataset rasterDS = rasterWS.OpenRasterDataset(e.Node.Text.ToString());
+                    IRasterWorkspaceEx rasterWS = m_workSpace as IRasterWorkspaceEx;
+                    IRasterDataset rasterDS = rasterWS.OpenRasterDataset(e.Node.Parent.Text.ToString()+"_"+ e.Node.Text.ToString());
                     IRasterLayer rasterLayer = new RasterLayerClass();
                     rasterLayer.CreateFromDataset(rasterDS);
                     rasterLayer.Name = e.Node.Text;
@@ -1447,25 +1573,26 @@ namespace CoastalGIS.MainGIS
                 this.treeVSDE.Nodes.Clear();
             }
 
-            TreeNode firstNode = new TreeNode("矿山空间数据库");
-            firstNode.ImageIndex = 32;
-            firstNode.SelectedImageIndex = 32;
-            firstNode.Tag = "DB";
-            this.treeVSDE.Nodes.Add(firstNode);
+            TreeNode secondNodeInter = new TreeNode("解译成果数据");
+            secondNodeInter.ImageIndex = 32;
+            secondNodeInter.SelectedImageIndex = 32;
+            secondNodeInter.Tag = "InterpDB";
+            this.treeVSDE.Nodes.Add(secondNodeInter);
 
-            TreeNode secondNodeSHP = new TreeNode("矢量数据");
-            secondNodeSHP.ImageIndex = 31;
-            secondNodeSHP.SelectedImageIndex = 31;
+            TreeNode secondNodeSHP = new TreeNode("基础地理数据");
+            secondNodeSHP.ImageIndex = 32;
+            secondNodeSHP.SelectedImageIndex = 32;
             secondNodeSHP.Tag = "VectorDB";
-            firstNode.Nodes.Add(secondNodeSHP);
+            this.treeVSDE.Nodes.Add(secondNodeSHP);
 
-            TreeNode secondNodeRaster = new TreeNode("影像数据");
-            secondNodeRaster.ImageIndex = 31;
-            secondNodeRaster.SelectedImageIndex = 31;
+            TreeNode secondNodeRaster = new TreeNode("遥感影像数据");
+            secondNodeRaster.ImageIndex = 32;
+            secondNodeRaster.SelectedImageIndex = 32;
             secondNodeRaster.Tag = "RasterDB";
-            firstNode.Nodes.Add(secondNodeRaster);
+            this.treeVSDE.Nodes.Add(secondNodeRaster);
 
-            string sqlText = "select distinct SATELITE from IMAGEMETADATA";
+            #region 加载影像
+            string sqlText = "select distinct [PLACE] from IMAGEMETADATA";
             this.m_oraCmd.CommandText = sqlText;
             OleDbDataReader drDS = m_oraCmd.ExecuteReader();
             IList<string> sl = new List<string>();
@@ -1480,15 +1607,15 @@ namespace CoastalGIS.MainGIS
                 TreeNode thirdNodeSL = new TreeNode(sl[i]);
                 thirdNodeSL.ImageIndex = 89;
                 thirdNodeSL.SelectedImageIndex = 89;
-                thirdNodeSL.Tag = sl[i]+"_sl";
+                thirdNodeSL.Tag = "Raster";
                 secondNodeRaster.Nodes.Add(thirdNodeSL);
 
-                sqlText = "select IMAGENAME from IMAGEMETADATA where SATELITE='" + sl[i] + "'";
+                sqlText = "select [PLACE],[SATELITE],[TIME] from IMAGEMETADATA where [PLACE]='" + sl[i] + "'";
                 m_oraCmd.CommandText = sqlText;
                 drDS = m_oraCmd.ExecuteReader();
                 while(drDS.Read())
                 {
-                    TreeNode forthNodeRas = new TreeNode(drDS.GetValue(0).ToString());
+                    TreeNode forthNodeRas = new TreeNode(drDS.GetValue(1).ToString() + "_" + drDS.GetValue(2).ToString());
                     forthNodeRas.ImageIndex = 30;
                     forthNodeRas.SelectedImageIndex = 30;
                     forthNodeRas.Tag = "Raster";
@@ -1497,64 +1624,85 @@ namespace CoastalGIS.MainGIS
                 drDS.Close();
             }
             sl.Clear();
+            #endregion 加载影像
 
+            #region 加载地理数据
+            sqlText = "select VECTORNAME,Geometry from VECTORMETADATA";
+            m_oraCmd.CommandText = sqlText;
+            drDS = m_oraCmd.ExecuteReader();
+            while (drDS.Read()) 
+            {
+                TreeNode thirdNode = new TreeNode(drDS.GetValue(0).ToString());
+                switch (drDS.GetValue(1).ToString())
+                {
+                    case "point":
+                        thirdNode.ImageIndex = 33;
+                        thirdNode.SelectedImageIndex = 33;
+                        thirdNode.Tag = "point";
+                        break;
+                    case "line":
+                        thirdNode.ImageIndex = 35;
+                        thirdNode.SelectedImageIndex = 35;
+                        thirdNode.Tag = "line";
+                        break;
+                    case "polygon":
+                        thirdNode.ImageIndex = 34;
+                        thirdNode.SelectedImageIndex = 34;
+                        thirdNode.Tag = "polygon";
+                        break;
+                }
+                secondNodeSHP.Nodes.Add(thirdNode);
+                
+            }
+            drDS.Close();
+            #endregion 加载地理数据
 
-            sqlText = "select distinct TYPE from VECTORMETADATA";
+            sqlText = "select distinct [PLACE] from INTERPDATA";
             this.m_oraCmd.CommandText = sqlText;
             drDS = m_oraCmd.ExecuteReader();
             while (drDS.Read())
             {
-                sl.Add(drDS.GetValue(0).ToString());
+                TreeNode thirdNodeInterp = new TreeNode(drDS.GetValue(0).ToString());
+                thirdNodeInterp.ImageIndex = 89;
+                thirdNodeInterp.SelectedImageIndex = 89;
+                thirdNodeInterp.Tag = "PLACE";
+                secondNodeInter.Nodes.Add(thirdNodeInterp);
             }
             drDS.Close();
 
-            for (int i = 0; i < sl.Count; i++) 
+            for (int i = 0; i < secondNodeInter.Nodes.Count; i++)
             {
-                TreeNode thirdNodeTP = new TreeNode(sl[i]);
-                thirdNodeTP.ImageIndex = 89;
-                thirdNodeTP.SelectedImageIndex = 89;
-                thirdNodeTP.Tag = sl[i]+"_tp";
-                secondNodeSHP.Nodes.Add(thirdNodeTP);
-
-                sqlText = "select VECTORNAME,Geometry from VECTORMETADATA where TYPE='" + sl[i] + "'";
-                m_oraCmd.CommandText = sqlText;
+                sqlText = "select [PLACE],[YEARDATE],[TYPE],[GEOMETRY] from INTERPDATA where [PLACE]='" + secondNodeInter.Nodes[i].Text.ToString() + "'";
+                this.m_oraCmd.CommandText = sqlText;
                 drDS = m_oraCmd.ExecuteReader();
-                while (drDS.Read()) 
+                while (drDS.Read())
                 {
-                    TreeNode forthNode = new TreeNode(drDS.GetValue(0).ToString());
-                    switch (drDS.GetValue(1).ToString())
+                    TreeNode forthNodeInterp = new TreeNode(drDS.GetValue(2).ToString() + "_" + drDS.GetValue(1).ToString());
+                    switch (drDS.GetValue(3).ToString())
                     {
                         case "point":
-                            forthNode.ImageIndex = 33;
-                            forthNode.SelectedImageIndex = 33;
-                            forthNode.Tag = "point";
+                            forthNodeInterp.ImageIndex = 33;
+                            forthNodeInterp.SelectedImageIndex = 33;
+                            forthNodeInterp.Tag = "point";
                             break;
                         case "line":
-                            forthNode.ImageIndex = 35;
-                            forthNode.SelectedImageIndex = 35;
-                            forthNode.Tag = "line";
+                            forthNodeInterp.ImageIndex = 35;
+                            forthNodeInterp.SelectedImageIndex = 35;
+                            forthNodeInterp.Tag = "line";
                             break;
                         case "polygon":
-                            forthNode.ImageIndex = 34;
-                            forthNode.SelectedImageIndex = 34;
-                            forthNode.Tag = "polygon";
-                            break;
-                        case "annotation":
-                            forthNode.ImageIndex = 85;
-                            forthNode.SelectedImageIndex = 85;
-                            forthNode.Tag = "Annotation";
-                            break;
-                        case "Else":
-                            forthNode.ImageIndex = -1;
-                            forthNode.SelectedImageIndex = -1;
-                            forthNode.Tag = "Else";
+                            forthNodeInterp.ImageIndex = 34;
+                            forthNodeInterp.SelectedImageIndex = 34;
+                            forthNodeInterp.Tag = "polygon";
                             break;
                     }
-                    thirdNodeTP.Nodes.Add(forthNode);
-                    
+                    secondNodeInter.Nodes[i].Nodes.Add(forthNodeInterp);
                 }
                 drDS.Close();
             }
+
+
+
 
             this.treeVSDE.ExpandAll();
         }
@@ -1572,6 +1720,7 @@ namespace CoastalGIS.MainGIS
             this.ExportToRaster.Enabled = false;
             this.AddToCallMap.Enabled = false;
             this.Delete.Enabled = true;
+            this.SelectBand.Enabled = false;
             System.Drawing.Point point = new System.Drawing.Point(e.X, e.Y);
 
 
@@ -1589,6 +1738,7 @@ namespace CoastalGIS.MainGIS
                 {
                     this.ExportToRaster.Enabled = true;
                     this.AddToCallMap.Enabled = true;
+                    this.SelectBand.Enabled = true;
                     this.conMenuTree.Show(this.treeVSDE, point);
                     this.m_node = e.Node;
                 }
@@ -1608,7 +1758,7 @@ namespace CoastalGIS.MainGIS
                     case "point":
                     case "line":
                     case "polygon":
-                        feaClass = ((IFeatureWorkspace)this.m_workSpace).OpenFeatureClass(this.m_node.Text);
+                        feaClass = ((IFeatureWorkspace)this.m_workSpace).OpenFeatureClass(this.m_node.Parent.Text.ToString()+"_"+ this.m_node.Text);
                         IDataset ds = feaClass as IDataset;
                         ds.Delete();
                         //ShowSDETree();
@@ -1618,10 +1768,10 @@ namespace CoastalGIS.MainGIS
                         break;
                    
                     case "Raster":
-                        //rasDS = ((IRasterWorkspaceEx)this.m_workSpace).OpenRasterDataset(this.m_node.Text.ToString());
-                        //((IDataset)rasDS).Delete();
-                        //ShowSDETree();
-                        System.IO.File.Delete(Application.StartupPath + "\\temp" + this.m_node.Text.ToString());
+                        rasDS = ((IRasterWorkspaceEx)this.m_workSpace).OpenRasterDataset(this.m_node.Parent.Text.ToString() + "_" + this.m_node.Text);
+                        ((IDataset)rasDS).Delete();
+                        ShowSDETree();
+                       // System.IO.File.Delete(Application.StartupPath + "\\temp" + this.m_node.Text.ToString());
                         sqlText = "delete from IMAGEMETADATA where IMAGENAME='" + this.m_node.Text.ToString() + "'";
                         this.m_oraCmd.CommandText = sqlText;
                         this.m_oraCmd.ExecuteNonQuery();
@@ -2433,9 +2583,15 @@ namespace CoastalGIS.MainGIS
             }
         }
 
-        private void EditingBar_CommandClick(object sender, Janus.Windows.UI.CommandBars.CommandEventArgs e)
+        private void 波段ToolStripMenuItem_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void SelectBand_Click_1(object sender, EventArgs e)
+        {
+            frmSelectBand frmB = new frmSelectBand(this.m_mapControl, (IRasterLayer)this.m_layer,this.m_workSpace);
+            frmB.ShowDialog();
         }
 
 

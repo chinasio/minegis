@@ -41,6 +41,7 @@
             Janus.Windows.UI.CommandBars.UICommandCategory uiCommandCategory9 = new Janus.Windows.UI.CommandBars.UICommandCategory();
             Janus.Windows.UI.CommandBars.UICommandCategory uiCommandCategory10 = new Janus.Windows.UI.CommandBars.UICommandCategory();
             Janus.Windows.UI.CommandBars.UICommandCategory uiCommandCategory11 = new Janus.Windows.UI.CommandBars.UICommandCategory();
+            Janus.Windows.UI.CommandBars.UICommandCategory uiCommandCategory12 = new Janus.Windows.UI.CommandBars.UICommandCategory();
             Janus.Windows.EditControls.UIComboBoxItem uiComboBoxItem1 = new Janus.Windows.EditControls.UIComboBoxItem();
             Janus.Windows.EditControls.UIComboBoxItem uiComboBoxItem2 = new Janus.Windows.EditControls.UIComboBoxItem();
             Janus.Windows.EditControls.UIComboBoxItem uiComboBoxItem3 = new Janus.Windows.EditControls.UIComboBoxItem();
@@ -106,6 +107,9 @@
             this.menuTool2 = new Janus.Windows.UI.CommandBars.UICommand("menuTool");
             this.menuCarto2 = new Janus.Windows.UI.CommandBars.UICommand("menuCarto");
             this.menuIndex1 = new Janus.Windows.UI.CommandBars.UICommand("menuIndex");
+            this.menuSk1 = new Janus.Windows.UI.CommandBars.UICommand("menuSk");
+            this.menuRSA1 = new Janus.Windows.UI.CommandBars.UICommand("menuRSA");
+            this.menu3D1 = new Janus.Windows.UI.CommandBars.UICommand("menu3D");
             this.menuHelp2 = new Janus.Windows.UI.CommandBars.UICommand("menuHelp");
             this.NavigationBar = new Janus.Windows.UI.CommandBars.UICommandBar();
             this.menuZoomIn1 = new Janus.Windows.UI.CommandBars.UICommand("menuZoomIn");
@@ -225,6 +229,10 @@
             this.menuNewSHP1 = new Janus.Windows.UI.CommandBars.UICommand("menuNewSHP");
             this.menuDraw1 = new Janus.Windows.UI.CommandBars.UICommand("menuDraw");
             this.menuPrintByAnyPolygonRegion1 = new Janus.Windows.UI.CommandBars.UICommand("menuPrintByAnyPolygonRegion");
+            this.Separator24 = new Janus.Windows.UI.CommandBars.UICommand("Separator");
+            this.menuCalibration1 = new Janus.Windows.UI.CommandBars.UICommand("menuCalibration");
+            this.menuQAC1 = new Janus.Windows.UI.CommandBars.UICommand("menuQAC");
+            this.menuComposite1 = new Janus.Windows.UI.CommandBars.UICommand("menuComposite");
             this.menuCarto = new Janus.Windows.UI.CommandBars.UICommand("menuCarto");
             this.menuLegend2 = new Janus.Windows.UI.CommandBars.UICommand("menuLegend");
             this.menuText2 = new Janus.Windows.UI.CommandBars.UICommand("menuText");
@@ -359,7 +367,6 @@
             this.menuImageManage = new Janus.Windows.UI.CommandBars.UICommand("menuImageManage");
             this.menu3D = new Janus.Windows.UI.CommandBars.UICommand("menu3D");
             this.menu3DForm1 = new Janus.Windows.UI.CommandBars.UICommand("menu3DForm");
-            this.menuCacu2 = new Janus.Windows.UI.CommandBars.UICommand("menuCacu");
             this.menu3DForm = new Janus.Windows.UI.CommandBars.UICommand("menu3DForm");
             this.menu3DFormwitnData = new Janus.Windows.UI.CommandBars.UICommand("menu3DFormwitnData");
             this.menu3DOpen = new Janus.Windows.UI.CommandBars.UICommand("menu3DOpen");
@@ -406,15 +413,50 @@
             this.menuMark = new Janus.Windows.UI.CommandBars.UICommand("menuMark");
             this.menuOut = new Janus.Windows.UI.CommandBars.UICommand("menuOut");
             this.menuIndexCacu = new Janus.Windows.UI.CommandBars.UICommand("menuIndexCacu");
-            this.menuIndexOne1 = new Janus.Windows.UI.CommandBars.UICommand("menuIndexOne");
-            this.menuIndexTwo1 = new Janus.Windows.UI.CommandBars.UICommand("menuIndexTwo");
-            this.menuIndexThree1 = new Janus.Windows.UI.CommandBars.UICommand("menuIndexThree");
-            this.menuIndexFour1 = new Janus.Windows.UI.CommandBars.UICommand("menuIndexFour");
             this.menuIndexOne = new Janus.Windows.UI.CommandBars.UICommand("menuIndexOne");
             this.menuIndexTwo = new Janus.Windows.UI.CommandBars.UICommand("menuIndexTwo");
             this.menuIndexThree = new Janus.Windows.UI.CommandBars.UICommand("menuIndexThree");
             this.menuIndexFour = new Janus.Windows.UI.CommandBars.UICommand("menuIndexFour");
             this.menuDig = new Janus.Windows.UI.CommandBars.UICommand("menuDig");
+            this.menuSk = new Janus.Windows.UI.CommandBars.UICommand("menuSk");
+            this.menuLUC1 = new Janus.Windows.UI.CommandBars.UICommand("menuLUC");
+            this.menuSKC1 = new Janus.Windows.UI.CommandBars.UICommand("menuSKC");
+            this.menuRSA = new Janus.Windows.UI.CommandBars.UICommand("menuRSA");
+            this.menuUClassification1 = new Janus.Windows.UI.CommandBars.UICommand("menuUClassification");
+            this.Separator9 = new Janus.Windows.UI.CommandBars.UICommand("Separator");
+            this.menuVI1 = new Janus.Windows.UI.CommandBars.UICommand("menuVI");
+            this.menuVC1 = new Janus.Windows.UI.CommandBars.UICommand("menuVC");
+            this.Separator21 = new Janus.Windows.UI.CommandBars.UICommand("Separator");
+            this.menuTemprature1 = new Janus.Windows.UI.CommandBars.UICommand("menuTemprature");
+            this.menuChangeD1 = new Janus.Windows.UI.CommandBars.UICommand("menuChangeD");
+            this.Separator22 = new Janus.Windows.UI.CommandBars.UICommand("Separator");
+            this.menuIce1 = new Janus.Windows.UI.CommandBars.UICommand("menuIce");
+            this.menuWater1 = new Janus.Windows.UI.CommandBars.UICommand("menuWater");
+            this.Separator23 = new Janus.Windows.UI.CommandBars.UICommand("Separator");
+            this.menuHOT1 = new Janus.Windows.UI.CommandBars.UICommand("menuHOT");
+            this.menuUClassification = new Janus.Windows.UI.CommandBars.UICommand("menuUClassification");
+            this.menuKMEANS1 = new Janus.Windows.UI.CommandBars.UICommand("menuKMEANS");
+            this.menuISODATA1 = new Janus.Windows.UI.CommandBars.UICommand("menuISODATA");
+            this.menuKMEANS = new Janus.Windows.UI.CommandBars.UICommand("menuKMEANS");
+            this.menuISODATA = new Janus.Windows.UI.CommandBars.UICommand("menuISODATA");
+            this.menuVI = new Janus.Windows.UI.CommandBars.UICommand("menuVI");
+            this.menuNDVI1 = new Janus.Windows.UI.CommandBars.UICommand("menuNDVI");
+            this.menuRVI1 = new Janus.Windows.UI.CommandBars.UICommand("menuRVI");
+            this.menuSAVI1 = new Janus.Windows.UI.CommandBars.UICommand("menuSAVI");
+            this.menuNDVI = new Janus.Windows.UI.CommandBars.UICommand("menuNDVI");
+            this.menuRVI = new Janus.Windows.UI.CommandBars.UICommand("menuRVI");
+            this.menuSAVI = new Janus.Windows.UI.CommandBars.UICommand("menuSAVI");
+            this.menuVC = new Janus.Windows.UI.CommandBars.UICommand("menuVC");
+            this.menuTemprature = new Janus.Windows.UI.CommandBars.UICommand("menuTemprature");
+            this.menuChangeD = new Janus.Windows.UI.CommandBars.UICommand("menuChangeD");
+            this.menuIce = new Janus.Windows.UI.CommandBars.UICommand("menuIce");
+            this.menuWater = new Janus.Windows.UI.CommandBars.UICommand("menuWater");
+            this.menuHOT = new Janus.Windows.UI.CommandBars.UICommand("menuHOT");
+            this.menuCalibration = new Janus.Windows.UI.CommandBars.UICommand("menuCalibration");
+            this.menuQAC = new Janus.Windows.UI.CommandBars.UICommand("menuQAC");
+            this.menuComposite = new Janus.Windows.UI.CommandBars.UICommand("menuComposite");
+            this.menuLUC = new Janus.Windows.UI.CommandBars.UICommand("menuLUC");
+            this.menuSKC = new Janus.Windows.UI.CommandBars.UICommand("menuSKC");
             this.LeftRebar1 = new Janus.Windows.UI.CommandBars.UIRebar();
             this.RightRebar1 = new Janus.Windows.UI.CommandBars.UIRebar();
             this.TopRebar1 = new Janus.Windows.UI.CommandBars.UIRebar();
@@ -474,6 +516,7 @@
             this.DeleteLayer = new System.Windows.Forms.ToolStripMenuItem();
             this.OpenAttribute = new System.Windows.Forms.ToolStripMenuItem();
             this.ClearAttribute = new System.Windows.Forms.ToolStripMenuItem();
+            this.SelectBand = new System.Windows.Forms.ToolStripMenuItem();
             this.printDialog1 = new System.Windows.Forms.PrintDialog();
             this.printPreviewDialog1 = new System.Windows.Forms.PrintPreviewDialog();
             this.pageSetupDialog1 = new System.Windows.Forms.PageSetupDialog();
@@ -674,6 +717,7 @@
             uiCommandCategory9.CategoryName = "CallMap";
             uiCommandCategory10.CategoryName = "3D";
             uiCommandCategory11.CategoryName = "Index";
+            uiCommandCategory12.CategoryName = "RSA";
             this.uiCommandManager1.Categories.AddRange(new Janus.Windows.UI.CommandBars.UICommandCategory[] {
             uiCommandCategory1,
             uiCommandCategory2,
@@ -685,7 +729,8 @@
             uiCommandCategory8,
             uiCommandCategory9,
             uiCommandCategory10,
-            uiCommandCategory11});
+            uiCommandCategory11,
+            uiCommandCategory12});
             this.uiCommandManager1.CommandBars.AddRange(new Janus.Windows.UI.CommandBars.UICommandBar[] {
             this.uiCommandBar2,
             this.NavigationBar,
@@ -835,7 +880,27 @@
             this.menuIndexTwo,
             this.menuIndexThree,
             this.menuIndexFour,
-            this.menuDig});
+            this.menuDig,
+            this.menuSk,
+            this.menuRSA,
+            this.menuUClassification,
+            this.menuKMEANS,
+            this.menuISODATA,
+            this.menuVI,
+            this.menuNDVI,
+            this.menuRVI,
+            this.menuSAVI,
+            this.menuVC,
+            this.menuTemprature,
+            this.menuChangeD,
+            this.menuIce,
+            this.menuWater,
+            this.menuHOT,
+            this.menuCalibration,
+            this.menuQAC,
+            this.menuComposite,
+            this.menuLUC,
+            this.menuSKC});
             this.uiCommandManager1.ContainerControl = this;
             this.uiCommandManager1.Id = new System.Guid("35d4c06c-11d9-4af4-b737-9ab4da1f4a11");
             this.uiCommandManager1.ImageList = this.imageList1;
@@ -864,6 +929,9 @@
             this.menuTool2,
             this.menuCarto2,
             this.menuIndex1,
+            this.menuSk1,
+            this.menuRSA1,
+            this.menu3D1,
             this.menuHelp2});
             this.uiCommandBar2.Key = "MainMenu";
             this.uiCommandBar2.Location = new System.Drawing.Point(0, 0);
@@ -896,6 +964,21 @@
             // 
             this.menuIndex1.Key = "menuIndex";
             this.menuIndex1.Name = "menuIndex1";
+            // 
+            // menuSk1
+            // 
+            this.menuSk1.Key = "menuSk";
+            this.menuSk1.Name = "menuSk1";
+            // 
+            // menuRSA1
+            // 
+            this.menuRSA1.Key = "menuRSA";
+            this.menuRSA1.Name = "menuRSA1";
+            // 
+            // menu3D1
+            // 
+            this.menu3D1.Key = "menu3D";
+            this.menu3D1.Name = "menu3D1";
             // 
             // menuHelp2
             // 
@@ -1092,7 +1175,7 @@
             this.ExportMapToolBar.Name = "ExportMapToolBar";
             this.ExportMapToolBar.RowIndex = 3;
             this.ExportMapToolBar.ShowToolTips = Janus.Windows.UI.InheritableBoolean.True;
-            this.ExportMapToolBar.Size = new System.Drawing.Size(246, 28);
+            this.ExportMapToolBar.Size = new System.Drawing.Size(338, 28);
             this.ExportMapToolBar.Text = "地图输出";
             this.ExportMapToolBar.Visible = false;
             // 
@@ -1209,9 +1292,8 @@
             this.EditingBar.Location = new System.Drawing.Point(464, 26);
             this.EditingBar.Name = "EditingBar";
             this.EditingBar.RowIndex = 1;
-            this.EditingBar.Size = new System.Drawing.Size(235, 28);
+            this.EditingBar.Size = new System.Drawing.Size(363, 28);
             this.EditingBar.Text = "要素编辑";
-            this.EditingBar.CommandClick += new Janus.Windows.UI.CommandBars.CommandEventHandler(this.EditingBar_CommandClick);
             // 
             // menuEditing1
             // 
@@ -1380,7 +1462,7 @@
             this.uiCommandBar1.Name = "uiCommandBar1";
             this.uiCommandBar1.RowIndex = 2;
             this.uiCommandBar1.ShowToolTips = Janus.Windows.UI.InheritableBoolean.True;
-            this.uiCommandBar1.Size = new System.Drawing.Size(60, 28);
+            this.uiCommandBar1.Size = new System.Drawing.Size(127, 28);
             this.uiCommandBar1.Text = "空间分析";
             // 
             // menuSelectbyAttribute2
@@ -1493,7 +1575,7 @@
             this.ThreeDBar.Location = new System.Drawing.Point(338, 82);
             this.ThreeDBar.Name = "ThreeDBar";
             this.ThreeDBar.RowIndex = 3;
-            this.ThreeDBar.Size = new System.Drawing.Size(46, 28);
+            this.ThreeDBar.Size = new System.Drawing.Size(305, 28);
             this.ThreeDBar.Text = "三维标准工具栏";
             this.ThreeDBar.Visible = false;
             // 
@@ -1825,7 +1907,11 @@
             this.menuRaster1,
             this.menuNewSHP1,
             this.menuDraw1,
-            this.menuPrintByAnyPolygonRegion1});
+            this.menuPrintByAnyPolygonRegion1,
+            this.Separator24,
+            this.menuCalibration1,
+            this.menuQAC1,
+            this.menuComposite1});
             this.menuTool.Key = "menuTool";
             this.menuTool.Name = "menuTool";
             this.menuTool.Text = "工具";
@@ -1853,6 +1939,27 @@
             this.menuPrintByAnyPolygonRegion1.ImageIndex = 84;
             this.menuPrintByAnyPolygonRegion1.Key = "menuPrintByAnyPolygonRegion";
             this.menuPrintByAnyPolygonRegion1.Name = "menuPrintByAnyPolygonRegion1";
+            // 
+            // Separator24
+            // 
+            this.Separator24.CommandType = Janus.Windows.UI.CommandBars.CommandType.Separator;
+            this.Separator24.Key = "Separator";
+            this.Separator24.Name = "Separator24";
+            // 
+            // menuCalibration1
+            // 
+            this.menuCalibration1.Key = "menuCalibration";
+            this.menuCalibration1.Name = "menuCalibration1";
+            // 
+            // menuQAC1
+            // 
+            this.menuQAC1.Key = "menuQAC";
+            this.menuQAC1.Name = "menuQAC1";
+            // 
+            // menuComposite1
+            // 
+            this.menuComposite1.Key = "menuComposite";
+            this.menuComposite1.Name = "menuComposite1";
             // 
             // menuCarto
             // 
@@ -2910,8 +3017,7 @@
             // 
             this.menu3D.CategoryName = "SA";
             this.menu3D.Commands.AddRange(new Janus.Windows.UI.CommandBars.UICommand[] {
-            this.menu3DForm1,
-            this.menuCacu2});
+            this.menu3DForm1});
             this.menu3D.Key = "menu3D";
             this.menu3D.Name = "menu3D";
             this.menu3D.Text = "三维分析";
@@ -2920,11 +3026,6 @@
             // 
             this.menu3DForm1.Key = "menu3DForm";
             this.menu3DForm1.Name = "menu3DForm1";
-            // 
-            // menuCacu2
-            // 
-            this.menuCacu2.Key = "menuCacu";
-            this.menuCacu2.Name = "menuCacu2";
             // 
             // menu3DForm
             // 
@@ -3247,38 +3348,9 @@
             // menuIndexCacu
             // 
             this.menuIndexCacu.CategoryName = "Index";
-            this.menuIndexCacu.Commands.AddRange(new Janus.Windows.UI.CommandBars.UICommand[] {
-            this.menuIndexOne1,
-            this.menuIndexTwo1,
-            this.menuIndexThree1,
-            this.menuIndexFour1});
             this.menuIndexCacu.Key = "menuIndexCacu";
             this.menuIndexCacu.Name = "menuIndexCacu";
             this.menuIndexCacu.Text = "指数计算";
-            // 
-            // menuIndexOne1
-            // 
-            this.menuIndexOne1.Key = "menuIndexOne";
-            this.menuIndexOne1.Name = "menuIndexOne1";
-            this.menuIndexOne1.Text = "生物丰度指数...";
-            // 
-            // menuIndexTwo1
-            // 
-            this.menuIndexTwo1.Key = "menuIndexTwo";
-            this.menuIndexTwo1.Name = "menuIndexTwo1";
-            this.menuIndexTwo1.Text = "植被覆盖指数...";
-            // 
-            // menuIndexThree1
-            // 
-            this.menuIndexThree1.Key = "menuIndexThree";
-            this.menuIndexThree1.Name = "menuIndexThree1";
-            this.menuIndexThree1.Text = "地质环境指数...";
-            // 
-            // menuIndexFour1
-            // 
-            this.menuIndexFour1.Key = "menuIndexFour";
-            this.menuIndexFour1.Name = "menuIndexFour1";
-            this.menuIndexFour1.Text = "土地退化指数...";
             // 
             // menuIndexOne
             // 
@@ -3314,6 +3386,265 @@
             this.menuDig.Key = "menuDig";
             this.menuDig.Name = "menuDig";
             this.menuDig.Text = "数字化";
+            // 
+            // menuSk
+            // 
+            this.menuSk.Commands.AddRange(new Janus.Windows.UI.CommandBars.UICommand[] {
+            this.menuLUC1,
+            this.menuSKC1});
+            this.menuSk.Key = "menuSk";
+            this.menuSk.Name = "menuSk";
+            this.menuSk.Text = "时空分析";
+            // 
+            // menuLUC1
+            // 
+            this.menuLUC1.Key = "menuLUC";
+            this.menuLUC1.Name = "menuLUC1";
+            // 
+            // menuSKC1
+            // 
+            this.menuSKC1.Key = "menuSKC";
+            this.menuSKC1.Name = "menuSKC1";
+            // 
+            // menuRSA
+            // 
+            this.menuRSA.CategoryName = "RSA";
+            this.menuRSA.Commands.AddRange(new Janus.Windows.UI.CommandBars.UICommand[] {
+            this.menuUClassification1,
+            this.Separator9,
+            this.menuVI1,
+            this.menuVC1,
+            this.Separator21,
+            this.menuTemprature1,
+            this.menuChangeD1,
+            this.Separator22,
+            this.menuIce1,
+            this.menuWater1,
+            this.Separator23,
+            this.menuHOT1});
+            this.menuRSA.Key = "menuRSA";
+            this.menuRSA.Name = "menuRSA";
+            this.menuRSA.Text = "遥感分析";
+            // 
+            // menuUClassification1
+            // 
+            this.menuUClassification1.Key = "menuUClassification";
+            this.menuUClassification1.Name = "menuUClassification1";
+            // 
+            // Separator9
+            // 
+            this.Separator9.CommandType = Janus.Windows.UI.CommandBars.CommandType.Separator;
+            this.Separator9.Key = "Separator";
+            this.Separator9.Name = "Separator9";
+            // 
+            // menuVI1
+            // 
+            this.menuVI1.Key = "menuVI";
+            this.menuVI1.Name = "menuVI1";
+            // 
+            // menuVC1
+            // 
+            this.menuVC1.Key = "menuVC";
+            this.menuVC1.Name = "menuVC1";
+            // 
+            // Separator21
+            // 
+            this.Separator21.CommandType = Janus.Windows.UI.CommandBars.CommandType.Separator;
+            this.Separator21.Key = "Separator";
+            this.Separator21.Name = "Separator21";
+            // 
+            // menuTemprature1
+            // 
+            this.menuTemprature1.Key = "menuTemprature";
+            this.menuTemprature1.Name = "menuTemprature1";
+            // 
+            // menuChangeD1
+            // 
+            this.menuChangeD1.Key = "menuChangeD";
+            this.menuChangeD1.Name = "menuChangeD1";
+            // 
+            // Separator22
+            // 
+            this.Separator22.CommandType = Janus.Windows.UI.CommandBars.CommandType.Separator;
+            this.Separator22.Key = "Separator";
+            this.Separator22.Name = "Separator22";
+            // 
+            // menuIce1
+            // 
+            this.menuIce1.Key = "menuIce";
+            this.menuIce1.Name = "menuIce1";
+            // 
+            // menuWater1
+            // 
+            this.menuWater1.Key = "menuWater";
+            this.menuWater1.Name = "menuWater1";
+            // 
+            // Separator23
+            // 
+            this.Separator23.CommandType = Janus.Windows.UI.CommandBars.CommandType.Separator;
+            this.Separator23.Key = "Separator";
+            this.Separator23.Name = "Separator23";
+            // 
+            // menuHOT1
+            // 
+            this.menuHOT1.Key = "menuHOT";
+            this.menuHOT1.Name = "menuHOT1";
+            // 
+            // menuUClassification
+            // 
+            this.menuUClassification.CategoryName = "RSA";
+            this.menuUClassification.Commands.AddRange(new Janus.Windows.UI.CommandBars.UICommand[] {
+            this.menuKMEANS1,
+            this.menuISODATA1});
+            this.menuUClassification.Key = "menuUClassification";
+            this.menuUClassification.Name = "menuUClassification";
+            this.menuUClassification.Text = "非监督分类";
+            // 
+            // menuKMEANS1
+            // 
+            this.menuKMEANS1.Key = "menuKMEANS";
+            this.menuKMEANS1.Name = "menuKMEANS1";
+            // 
+            // menuISODATA1
+            // 
+            this.menuISODATA1.Key = "menuISODATA";
+            this.menuISODATA1.Name = "menuISODATA1";
+            // 
+            // menuKMEANS
+            // 
+            this.menuKMEANS.CategoryName = "RSA";
+            this.menuKMEANS.Key = "menuKMEANS";
+            this.menuKMEANS.Name = "menuKMEANS";
+            this.menuKMEANS.Text = "K-MEANS分类";
+            // 
+            // menuISODATA
+            // 
+            this.menuISODATA.CategoryName = "RSA";
+            this.menuISODATA.Key = "menuISODATA";
+            this.menuISODATA.Name = "menuISODATA";
+            this.menuISODATA.Text = "ISODATA分类";
+            // 
+            // menuVI
+            // 
+            this.menuVI.CategoryName = "RSA";
+            this.menuVI.Commands.AddRange(new Janus.Windows.UI.CommandBars.UICommand[] {
+            this.menuNDVI1,
+            this.menuRVI1,
+            this.menuSAVI1});
+            this.menuVI.Key = "menuVI";
+            this.menuVI.Name = "menuVI";
+            this.menuVI.Text = "植被指数";
+            // 
+            // menuNDVI1
+            // 
+            this.menuNDVI1.Key = "menuNDVI";
+            this.menuNDVI1.Name = "menuNDVI1";
+            // 
+            // menuRVI1
+            // 
+            this.menuRVI1.Key = "menuRVI";
+            this.menuRVI1.Name = "menuRVI1";
+            // 
+            // menuSAVI1
+            // 
+            this.menuSAVI1.Key = "menuSAVI";
+            this.menuSAVI1.Name = "menuSAVI1";
+            // 
+            // menuNDVI
+            // 
+            this.menuNDVI.CategoryName = "RSA";
+            this.menuNDVI.Key = "menuNDVI";
+            this.menuNDVI.Name = "menuNDVI";
+            this.menuNDVI.Text = "归一化植被指数";
+            // 
+            // menuRVI
+            // 
+            this.menuRVI.CategoryName = "RSA";
+            this.menuRVI.Key = "menuRVI";
+            this.menuRVI.Name = "menuRVI";
+            this.menuRVI.Text = "比值植被指数";
+            // 
+            // menuSAVI
+            // 
+            this.menuSAVI.CategoryName = "RSA";
+            this.menuSAVI.Key = "menuSAVI";
+            this.menuSAVI.Name = "menuSAVI";
+            this.menuSAVI.Text = "土壤调整指数指数";
+            // 
+            // menuVC
+            // 
+            this.menuVC.CategoryName = "RSA";
+            this.menuVC.Key = "menuVC";
+            this.menuVC.Name = "menuVC";
+            this.menuVC.Text = "植被覆盖度";
+            // 
+            // menuTemprature
+            // 
+            this.menuTemprature.CategoryName = "RSA";
+            this.menuTemprature.Key = "menuTemprature";
+            this.menuTemprature.Name = "menuTemprature";
+            this.menuTemprature.Text = "地表温度反演";
+            // 
+            // menuChangeD
+            // 
+            this.menuChangeD.CategoryName = "RSA";
+            this.menuChangeD.Key = "menuChangeD";
+            this.menuChangeD.Name = "menuChangeD";
+            this.menuChangeD.Text = "地表变化检测";
+            // 
+            // menuIce
+            // 
+            this.menuIce.CategoryName = "RSA";
+            this.menuIce.Key = "menuIce";
+            this.menuIce.Name = "menuIce";
+            this.menuIce.Text = "冰雪面积提取";
+            // 
+            // menuWater
+            // 
+            this.menuWater.CategoryName = "RSA";
+            this.menuWater.Key = "menuWater";
+            this.menuWater.Name = "menuWater";
+            this.menuWater.Text = "水体面积提取";
+            // 
+            // menuHOT
+            // 
+            this.menuHOT.CategoryName = "RSA";
+            this.menuHOT.Key = "menuHOT";
+            this.menuHOT.Name = "menuHOT";
+            this.menuHOT.Text = "HOT灰霾检测";
+            // 
+            // menuCalibration
+            // 
+            this.menuCalibration.CategoryName = "RSA";
+            this.menuCalibration.Key = "menuCalibration";
+            this.menuCalibration.Name = "menuCalibration";
+            this.menuCalibration.Text = "遥感定标";
+            // 
+            // menuQAC
+            // 
+            this.menuQAC.CategoryName = "RSA";
+            this.menuQAC.Key = "menuQAC";
+            this.menuQAC.Name = "menuQAC";
+            this.menuQAC.Text = "快速大气校正";
+            // 
+            // menuComposite
+            // 
+            this.menuComposite.CategoryName = "RSA";
+            this.menuComposite.Key = "menuComposite";
+            this.menuComposite.Name = "menuComposite";
+            this.menuComposite.Text = "波段组合";
+            // 
+            // menuLUC
+            // 
+            this.menuLUC.Key = "menuLUC";
+            this.menuLUC.Name = "menuLUC";
+            this.menuLUC.Text = "地类变化分析";
+            // 
+            // menuSKC
+            // 
+            this.menuSKC.Key = "menuSKC";
+            this.menuSKC.Name = "menuSKC";
+            this.menuSKC.Text = "指标时空分析";
             // 
             // LeftRebar1
             // 
@@ -3953,9 +4284,10 @@
             this.conMenuTOC.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.DeleteLayer,
             this.OpenAttribute,
-            this.ClearAttribute});
+            this.ClearAttribute,
+            this.SelectBand});
             this.conMenuTOC.Name = "conMenuTOC";
-            this.conMenuTOC.Size = new System.Drawing.Size(131, 70);
+            this.conMenuTOC.Size = new System.Drawing.Size(131, 92);
             // 
             // DeleteLayer
             // 
@@ -3981,6 +4313,13 @@
             this.ClearAttribute.Size = new System.Drawing.Size(130, 22);
             this.ClearAttribute.Text = "清空属性表";
             this.ClearAttribute.Click += new System.EventHandler(this.ClearAttribute_Click);
+            // 
+            // SelectBand
+            // 
+            this.SelectBand.Name = "SelectBand";
+            this.SelectBand.Size = new System.Drawing.Size(130, 22);
+            this.SelectBand.Text = "选择波段";
+            this.SelectBand.Click += new System.EventHandler(this.SelectBand_Click_1);
             // 
             // printDialog1
             // 
@@ -4501,7 +4840,6 @@
         private Janus.Windows.UI.CommandBars.UICommand menu3DAddDEM;
         private Janus.Windows.UI.CommandBars.UICommand menuCacu1;
         private Janus.Windows.UI.CommandBars.UICommand menuCacu;
-        private Janus.Windows.UI.CommandBars.UICommand menuCacu2;
         private Janus.Windows.UI.CommandBars.UICommand menuSizeEvaluation;
         private Janus.Windows.UI.CommandBars.UICommand menuNewCell;
         private Janus.Windows.UI.CommandBars.UICommand menuNewCell1;
@@ -4542,18 +4880,59 @@
         private Janus.Windows.UI.CommandBars.UICommand menuMark;
         private Janus.Windows.UI.CommandBars.UICommand menuOut;
         private Janus.Windows.UI.CommandBars.UICommand menuIndexCacu;
-        private Janus.Windows.UI.CommandBars.UICommand menuIndexOne1;
         private Janus.Windows.UI.CommandBars.UICommand menuIndexOne;
-        private Janus.Windows.UI.CommandBars.UICommand menuIndexTwo1;
         private Janus.Windows.UI.CommandBars.UICommand menuIndexTwo;
-        private Janus.Windows.UI.CommandBars.UICommand menuIndexThree1;
-        private Janus.Windows.UI.CommandBars.UICommand menuIndexFour1;
         private Janus.Windows.UI.CommandBars.UICommand menuIndexThree;
         private Janus.Windows.UI.CommandBars.UICommand menuIndexFour;
         private Janus.Windows.UI.CommandBars.UICommand menuDig1;
         private Janus.Windows.UI.CommandBars.UICommand menuDig;
-
-
+        private Janus.Windows.UI.CommandBars.UICommand menuSk;
+        private Janus.Windows.UI.CommandBars.UICommand menu3D1;
+        private System.Windows.Forms.ToolStripMenuItem SelectBand;
+        private Janus.Windows.UI.CommandBars.UICommand menuSk1;
+        private Janus.Windows.UI.CommandBars.UICommand menuRSA1;
+        private Janus.Windows.UI.CommandBars.UICommand menuRSA;
+        private Janus.Windows.UI.CommandBars.UICommand menuUClassification1;
+        private Janus.Windows.UI.CommandBars.UICommand Separator9;
+        private Janus.Windows.UI.CommandBars.UICommand menuVI1;
+        private Janus.Windows.UI.CommandBars.UICommand menuUClassification;
+        private Janus.Windows.UI.CommandBars.UICommand menuKMEANS1;
+        private Janus.Windows.UI.CommandBars.UICommand menuISODATA1;
+        private Janus.Windows.UI.CommandBars.UICommand menuKMEANS;
+        private Janus.Windows.UI.CommandBars.UICommand menuISODATA;
+        private Janus.Windows.UI.CommandBars.UICommand menuVI;
+        private Janus.Windows.UI.CommandBars.UICommand menuNDVI1;
+        private Janus.Windows.UI.CommandBars.UICommand menuRVI1;
+        private Janus.Windows.UI.CommandBars.UICommand menuNDVI;
+        private Janus.Windows.UI.CommandBars.UICommand menuRVI;
+        private Janus.Windows.UI.CommandBars.UICommand menuVC1;
+        private Janus.Windows.UI.CommandBars.UICommand Separator21;
+        private Janus.Windows.UI.CommandBars.UICommand menuTemprature1;
+        private Janus.Windows.UI.CommandBars.UICommand menuChangeD1;
+        private Janus.Windows.UI.CommandBars.UICommand Separator22;
+        private Janus.Windows.UI.CommandBars.UICommand menuIce1;
+        private Janus.Windows.UI.CommandBars.UICommand menuWater1;
+        private Janus.Windows.UI.CommandBars.UICommand Separator23;
+        private Janus.Windows.UI.CommandBars.UICommand menuHOT1;
+        private Janus.Windows.UI.CommandBars.UICommand menuSAVI1;
+        private Janus.Windows.UI.CommandBars.UICommand menuSAVI;
+        private Janus.Windows.UI.CommandBars.UICommand menuVC;
+        private Janus.Windows.UI.CommandBars.UICommand menuTemprature;
+        private Janus.Windows.UI.CommandBars.UICommand menuChangeD;
+        private Janus.Windows.UI.CommandBars.UICommand menuIce;
+        private Janus.Windows.UI.CommandBars.UICommand menuWater;
+        private Janus.Windows.UI.CommandBars.UICommand menuHOT;
+        private Janus.Windows.UI.CommandBars.UICommand Separator24;
+        private Janus.Windows.UI.CommandBars.UICommand menuCalibration1;
+        private Janus.Windows.UI.CommandBars.UICommand menuQAC1;
+        private Janus.Windows.UI.CommandBars.UICommand menuComposite1;
+        private Janus.Windows.UI.CommandBars.UICommand menuCalibration;
+        private Janus.Windows.UI.CommandBars.UICommand menuQAC;
+        private Janus.Windows.UI.CommandBars.UICommand menuComposite;
+        private Janus.Windows.UI.CommandBars.UICommand menuLUC1;
+        private Janus.Windows.UI.CommandBars.UICommand menuLUC;
+        private Janus.Windows.UI.CommandBars.UICommand menuSKC1;
+        private Janus.Windows.UI.CommandBars.UICommand menuSKC;
     }
 }
 
