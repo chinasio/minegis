@@ -1,0 +1,54 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 10.00
+# Visual Studio 2008
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CoastalGIS.MainGIS", "..\..\..\..\CXQ\MGIS\MGIS\CoastalGIS.MainGIS\CoastalGIS.MainGIS.csproj", "{B9C4165C-43EC-4D43-91D5-AF8EA2E92552}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CoastalGIS.SpatialDataBase", "..\..\..\..\CXQ\MGIS\MGIS\CoastalGIS.SpatialDataBase\CoastalGIS.SpatialDataBase.csproj", "{BBE9C8A6-049E-497D-B35F-82DB303B2487}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CoastalGIS.MapEditing", "..\..\..\..\CXQ\MGIS\MGIS\CoastalGIS.MapEditing\CoastalGIS.MapEditing.csproj", "{94952C9C-E1F3-4A4D-9A3F-7031A4ED247B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CoastalGIS.ExportMapProj", "..\..\..\..\CXQ\MGIS\MGIS\CoastalGIS.ExportMapProj\CoastalGIS.ExportMapProj.csproj", "{93362936-3E50-4165-938D-9AAB9B2C06FE}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CoastalGIS.Common", "..\..\..\..\CXQ\MGIS\MGIS\CoastalGIS.Common\CoastalGIS.Common.csproj", "{88C6002B-E0B7-4615-B99C-66FEEEF7A57A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CoastalGIS.CallMap", "..\..\..\..\CXQ\MGIS\MGIS\CoastalGIS.CallMap\CoastalGIS.CallMap.csproj", "{BEE4BFC6-8111-4AB6-899B-839AB1627462}"
+EndProject
+Global
+	GlobalSection(SubversionScc) = preSolution
+		Svn-Managed = True
+		Manager = AnkhSVN - Subversion Support for Visual Studio
+	EndGlobalSection
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{B9C4165C-43EC-4D43-91D5-AF8EA2E92552}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B9C4165C-43EC-4D43-91D5-AF8EA2E92552}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B9C4165C-43EC-4D43-91D5-AF8EA2E92552}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B9C4165C-43EC-4D43-91D5-AF8EA2E92552}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BBE9C8A6-049E-497D-B35F-82DB303B2487}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BBE9C8A6-049E-497D-B35F-82DB303B2487}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BBE9C8A6-049E-497D-B35F-82DB303B2487}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BBE9C8A6-049E-497D-B35F-82DB303B2487}.Release|Any CPU.Build.0 = Release|Any CPU
+		{94952C9C-E1F3-4A4D-9A3F-7031A4ED247B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{94952C9C-E1F3-4A4D-9A3F-7031A4ED247B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{94952C9C-E1F3-4A4D-9A3F-7031A4ED247B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{94952C9C-E1F3-4A4D-9A3F-7031A4ED247B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{93362936-3E50-4165-938D-9AAB9B2C06FE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{93362936-3E50-4165-938D-9AAB9B2C06FE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{93362936-3E50-4165-938D-9AAB9B2C06FE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{93362936-3E50-4165-938D-9AAB9B2C06FE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{88C6002B-E0B7-4615-B99C-66FEEEF7A57A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{88C6002B-E0B7-4615-B99C-66FEEEF7A57A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{88C6002B-E0B7-4615-B99C-66FEEEF7A57A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{88C6002B-E0B7-4615-B99C-66FEEEF7A57A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BEE4BFC6-8111-4AB6-899B-839AB1627462}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BEE4BFC6-8111-4AB6-899B-839AB1627462}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BEE4BFC6-8111-4AB6-899B-839AB1627462}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BEE4BFC6-8111-4AB6-899B-839AB1627462}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
