@@ -14,10 +14,21 @@
     <UpgradeBackupLocation>
     </UpgradeBackupLocation>
     <OldToolsVersion>2.0</OldToolsVersion>
-    <SccProjectName>Svn</SccProjectName>
-    <SccLocalPath>Svn</SccLocalPath>
-    <SccAuxPath>Svn</SccAuxPath>
-    <SccProvider>SubversionScc</SccProvider>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -113,23 +124,17 @@
     <Compile Include="ChildForm\frmAbout.Designer.cs">
       <DependentUpon>frmAbout.cs</DependentUpon>
     </Compile>
-    <Compile Include="ChildForm\frmCacu.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="ChildForm\frmCacu.Designer.cs">
-      <DependentUpon>frmCacu.cs</DependentUpon>
-    </Compile>
     <Compile Include="ChildForm\frmCacuIndex.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="ChildForm\frmCacuIndex.Designer.cs">
       <DependentUpon>frmCacuIndex.cs</DependentUpon>
     </Compile>
-    <Compile Include="ChildForm\frmCellStat.cs">
+    <Compile Include="ChildForm\frmChart.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="ChildForm\frmCellStat.Designer.cs">
-      <DependentUpon>frmCellStat.cs</DependentUpon>
+    <Compile Include="ChildForm\frmChart.Designer.cs">
+      <DependentUpon>frmChart.cs</DependentUpon>
     </Compile>
     <Compile Include="ChildForm\frmDis.cs">
       <SubType>Form</SubType>
@@ -142,6 +147,24 @@
     </Compile>
     <Compile Include="ChildForm\frmFieldName.Designer.cs">
       <DependentUpon>frmFieldName.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ChildForm\frmIndexImport.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ChildForm\frmIndexImport.Designer.cs">
+      <DependentUpon>frmIndexImport.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ChildForm\frmSelectBand.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ChildForm\frmSelectBand.Designer.cs">
+      <DependentUpon>frmSelectBand.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ChildForm\frmShowChart.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ChildForm\frmShowChart.Designer.cs">
+      <DependentUpon>frmShowChart.cs</DependentUpon>
     </Compile>
     <Compile Include="ChildForm\frmTip.cs">
       <SubType>Form</SubType>
@@ -214,17 +237,13 @@
       <SubType>Designer</SubType>
       <DependentUpon>frmAbout.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="ChildForm\frmCacu.resx">
-      <SubType>Designer</SubType>
-      <DependentUpon>frmCacu.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="ChildForm\frmCacuIndex.resx">
       <SubType>Designer</SubType>
       <DependentUpon>frmCacuIndex.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="ChildForm\frmCellStat.resx">
+    <EmbeddedResource Include="ChildForm\frmChart.resx">
       <SubType>Designer</SubType>
-      <DependentUpon>frmCellStat.cs</DependentUpon>
+      <DependentUpon>frmChart.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ChildForm\frmDis.resx">
       <SubType>Designer</SubType>
@@ -233,6 +252,18 @@
     <EmbeddedResource Include="ChildForm\frmFieldName.resx">
       <SubType>Designer</SubType>
       <DependentUpon>frmFieldName.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ChildForm\frmIndexImport.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>frmIndexImport.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ChildForm\frmSelectBand.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>frmSelectBand.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ChildForm\frmShowChart.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>frmShowChart.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ChildForm\frmTip.resx">
       <SubType>Designer</SubType>
@@ -301,12 +332,59 @@
     <Content Include="Image\Polygon.bmp" />
     <Content Include="Image\Polyline.bmp" />
     <Content Include="Image\Raster.jpg" />
+    <None Include="Resources\Open2.jpg" />
     <None Include="Resources\Open.jpg" />
     <None Include="Resources\启动画面.jpg" />
     <None Include="Resources\红色.jpg" />
     <None Include="Resources\未命名.bmp" />
     <None Include="Resources\10779588_2200181.jpg" />
     <None Include="Resources\10779588_220018.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <COMReference Include="AxMSChart20Lib">
+      <Guid>{65E121D4-0C60-11D2-A9FC-0000F8754DA1}</Guid>
+      <VersionMajor>2</VersionMajor>
+      <VersionMinor>0</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>aximp</WrapperTool>
+      <Isolated>False</Isolated>
+    </COMReference>
+    <COMReference Include="MSChart20Lib">
+      <Guid>{65E121D4-0C60-11D2-A9FC-0000F8754DA1}</Guid>
+      <VersionMajor>2</VersionMajor>
+      <VersionMinor>0</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>tlbimp</WrapperTool>
+      <Isolated>False</Isolated>
+    </COMReference>
+    <COMReference Include="MSDATASRC">
+      <Guid>{7C0FFAB0-CD84-11D0-949A-00A0C91110ED}</Guid>
+      <VersionMajor>1</VersionMajor>
+      <VersionMinor>0</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>primary</WrapperTool>
+      <Isolated>False</Isolated>
+    </COMReference>
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.2.0">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 2.0 %28x86%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.0">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.0 %28x86%29</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{967B4E0D-AD0C-4609-AB67-0FA40C0206D8}" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

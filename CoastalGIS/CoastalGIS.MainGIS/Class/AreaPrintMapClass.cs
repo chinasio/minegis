@@ -189,8 +189,8 @@ namespace CoastalGIS.MainGIS
             IPolygon polygon = m_NewPolygonFeedback.Stop();
             CreateLayerM cl = new CreateLayerM((IMapControlDefault)m_hookHelper.Hook);
             IFeatureClass feac = cl.CreatePolygonLayer(polygon);
-            frmCacu frmCacul = new frmCacu((IMapControlDefault)m_hookHelper.Hook,feac);
-            frmCacul.ShowDialog();
+            //frmCacu frmCacul = new frmCacu((IMapControlDefault)m_hookHelper.Hook,feac);
+            //frmCacul.ShowDialog();
         }
         #endregion
 

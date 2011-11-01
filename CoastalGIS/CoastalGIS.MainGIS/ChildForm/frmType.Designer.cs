@@ -118,9 +118,13 @@
             // 
             this.comboBox4.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBox4.FormattingEnabled = true;
+            this.comboBox4.Items.AddRange(new object[] {
+            "轻度侵蚀",
+            "中度侵蚀",
+            "重度侵蚀"});
             this.comboBox4.Location = new System.Drawing.Point(8, 204);
             this.comboBox4.Name = "comboBox4";
-            this.comboBox4.Size = new System.Drawing.Size(211, 20);
+            this.comboBox4.Size = new System.Drawing.Size(217, 20);
             this.comboBox4.TabIndex = 7;
             this.comboBox4.SelectedIndexChanged += new System.EventHandler(this.comboBox4_SelectedIndexChanged);
             // 
@@ -137,6 +141,10 @@
             // 
             this.comboBox3.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBox3.FormattingEnabled = true;
+            this.comboBox3.Items.AddRange(new object[] {
+            "地表塌陷",
+            "地裂缝",
+            "滑坡"});
             this.comboBox3.Location = new System.Drawing.Point(12, 149);
             this.comboBox3.Name = "comboBox3";
             this.comboBox3.Size = new System.Drawing.Size(211, 20);
@@ -156,6 +164,22 @@
             // 
             this.comboBox2.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBox2.FormattingEnabled = true;
+            this.comboBox2.Items.AddRange(new object[] {
+            "有林地",
+            "灌木林地",
+            "疏林地和其它林地",
+            "高覆盖度草地",
+            "中覆盖度草地",
+            "低覆盖度草地",
+            "水田",
+            "旱地",
+            "城镇建设用地",
+            "农村居民点",
+            "其它建设用地",
+            "沙地",
+            "盐碱地",
+            "裸土地",
+            "裸岩石砾"});
             this.comboBox2.Location = new System.Drawing.Point(14, 95);
             this.comboBox2.Name = "comboBox2";
             this.comboBox2.Size = new System.Drawing.Size(211, 20);

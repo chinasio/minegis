@@ -391,13 +391,6 @@ namespace CoastalGIS.SpatialDataBase
                     }
                     break;
 
-                case "报表输出":
-                    //frmPrintMetaData frmPrint = new frmPrintMetaData();
-                    //frmPrint.Show();
-                    frmQueryMetaData frmQuery = new frmQueryMetaData(m_oraCmd);
-                    frmQuery.ShowDialog();
-
-                    break;
             }
         }
 

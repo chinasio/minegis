@@ -7,10 +7,13 @@ using System.Text;
 using System.Windows.Forms;
 using System.IO;
 using System.Threading;
+using System.Configuration;
 
 using ESRI.ArcGIS.Geodatabase;
 using ESRI.ArcGIS.DataSourcesRaster;
 using ESRI.ArcGIS.esriSystem;
+using ESRI.ArcGIS.ConversionTools;
+using ESRI.ArcGIS.Geoprocessor;
 
 using CoastalGIS.Common;
 
@@ -29,6 +32,12 @@ namespace CoastalGIS.SpatialDataBase
         private delegate void DoWork();
         private OleDbCommand m_oraCmd=null;
         Common.frmWaiting frm = new CoastalGIS.Common.frmWaiting();
+
+        private string m_place="";
+        private string m_time="";
+        private string m_satelite="";
+
+        private string m_FGDB= ConfigurationManager.AppSettings["FGDBPath"];      
 
         public frmRasterToSDE(GDBConenction gcon,OleDbCommand oraCmd)
         {
@@ -49,41 +58,29 @@ namespace CoastalGIS.SpatialDataBase
             openFileDialog1.Title = "选择数据";
             openFileDialog1.Filter = "影像图像(*.Tiff)|*.tif|JPEG(*.jpg)|*.jpg|IMG(*.img)|*.img";
             openFileDialog1.FilterIndex = 0;
-            openFileDialog1.Multiselect = true;
             if (openFileDialog1.ShowDialog() == DialogResult.OK)
             {
-                for (int i = 0; i < openFileDialog1.FileNames.Length; i++)
-                {
-                    this.listBox1.Items.Add(openFileDialog1.FileNames[i]);
-                    m_name.Add(openFileDialog1.FileNames[i]);
-                }
+                this.textBox1.Text = openFileDialog1.FileName;
             } 
-        }
-
-        private void btnDelete_Click(object sender, EventArgs e)
-        {
-            if (this.listBox1.SelectedItems.Count > 0)
-            {
-                int i = this.listBox1.SelectedIndex;
-                this.listBox1.Items.Remove(this.listBox1.SelectedItem);
-                this.m_name.RemoveAt(i);
-            }
-        }
-
-        private void btnClear_Click(object sender, EventArgs e)
-        {
-            this.listBox1.Items.Clear();
         }
 
         private void frmRasterToSDE_Load(object sender, EventArgs e)
         {
 
             this.SetDesktopLocation(205, 160);
+            m_oraCmd.CommandText = "select distinct [PLACE] from IMAGEMETADATA";
+            OleDbDataReader dr = m_oraCmd.ExecuteReader();
+
+            while (dr.Read())
+            {
+                this.comboBox2.Items.Add(dr.GetValue(0).ToString());
+            }
+            dr.Close();
         }
 
         private void btnOK_Click(object sender, EventArgs e)
         {
-            if (this.listBox1.Items.Count == 0)
+            if (this.textBox1.Text.Trim()=="")
             {
                 MessageBox.Show("请先加载数据！");
                 return;
@@ -93,26 +90,30 @@ namespace CoastalGIS.SpatialDataBase
                 MessageBox.Show("请选择卫星名称！");
                 return;
             }
+            this.m_satelite = this.cmbDS.SelectedItem.ToString();
 
             if (this.comboBox1.SelectedItem == null)
             {
                 MessageBox.Show("请选择年份！");
                 return;
             }
+            this.m_time = this.comboBox1.SelectedItem.ToString();
 
-            string errorMessage;
-            for (int i = 0; i < this.m_name.Count; i++)
+            if (this.comboBox2.SelectedIndex == -1 && this.textBox2.Text.Trim() == "")
             {
-                errorMessage = CommonFunc.NameCheck(System.IO.Path.GetFileNameWithoutExtension(this.m_name[i].ToString()));
-                if (errorMessage != "true")
-                {
-                    MessageBox.Show(errorMessage + "，请修改！", "提示");
-                    return;
-                }
+                MessageBox.Show("请选择矿区！", "提示");
+                return;
             }
 
-            this.m_count = this.listBox1.Items.Count;
-            this.m_ds = this.cmbDS.Text.ToString();
+            if (this.textBox2.Text.Trim() != "")
+            {
+                this.m_place = this.textBox2.Text.Trim();
+            }
+            else 
+            {
+                this.m_place = this.comboBox2.SelectedItem.ToString();
+            }
+
             frm.Show();
             frm.WaitingLabel = "正在导入影像数据";
             Application.DoEvents();
@@ -125,27 +126,32 @@ namespace CoastalGIS.SpatialDataBase
 
         private void ImportRaster() 
         {
+            Geoprocessor gp = new Geoprocessor();//定义处理对象
+            gp.OverwriteOutput = true;//覆盖输出
+            RasterToGeodatabase pRasterToGeodatabase = new RasterToGeodatabase();
+
             try 
             {
-                IWorkspaceFactory workspaceFactory = new RasterWorkspaceFactoryClass();
-                IRasterWorkspace rasterWorkspace = null;
-                IRasterDataset rasterDataset = null;
-                for (int i = 0; i < this.m_count; i++) 
-                {
-                    UIWaiting("正在导入" + System.IO.Path.GetFileName(this.m_name[i].ToString()) + "层");
-                    Application.DoEvents();
-                    if (m_gdata.CheckSheetName(System.IO.Path.GetFileName(this.m_name[i].ToString()),"2")) 
-                    {
-                        MessageBox.Show("已存在名为 " + System.IO.Path.GetFileName(this.m_name[i].ToString()) + " 的数据，请修改名称", "提示");
-                        continue;
-                    }
-                    rasterWorkspace = workspaceFactory.OpenFromFile(System.IO.Path.GetDirectoryName(this.m_name[i].ToString()), 0) as IRasterWorkspace;
-                    rasterDataset = rasterWorkspace.OpenRasterDataset(System.IO.Path.GetFileName(this.m_name[i].ToString()));
-                    m_gdata.ImportRas(rasterDataset, System.IO.Path.GetFileNameWithoutExtension(this.m_name[i].ToString()));
-                    //File.Copy(this.m_name[i].ToString(), Application.StartupPath + "\\temp\\" + System.IO.Path.GetFileName(this.m_name[i].ToString()));
-                    m_gdata.InsertMataData(System.IO.Path.GetFileName(this.m_name[i].ToString()), m_ds, this.comboBox1.Text.ToString(),"2");
-                    Application.DoEvents();
-                }
+                UIWaiting("正在导入" + this.textBox1.Text + "层");
+                Application.DoEvents();
+
+                FileInfo fileInfo = new FileInfo(this.textBox1.Text.ToString());
+                string fpath = fileInfo.DirectoryName;
+                string fname = fileInfo.Name.Substring(0, fileInfo.Name.IndexOf('.'));
+
+                pRasterToGeodatabase.Input_Rasters = this.textBox1.Text;
+                pRasterToGeodatabase.Output_Geodatabase = m_FGDB;
+                gp.Execute(pRasterToGeodatabase, null);
+
+                IRasterWorkspaceEx rasterWS = m_workSpace as IRasterWorkspaceEx;
+                IRasterDataset rasterDS = rasterWS.OpenRasterDataset(fname);
+                IDataset ds = rasterDS as IDataset;
+                ds.Rename(this.m_place+"_"+this.m_satelite+"_"+this.m_time);
+
+
+                m_gdata.InsertMataData(this.m_place + "_" + this.m_satelite + "_" + this.m_time, m_satelite, this.m_time, "2",this.m_place);
+                Application.DoEvents();
+
                 MessageBox.Show("入库成功！","提示");
                 frm.Close();
                 this.Close();
@@ -214,6 +220,20 @@ namespace CoastalGIS.SpatialDataBase
         private void btnCancel_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void checkBox1_CheckedChanged(object sender, EventArgs e)
+        {
+            if (this.checkBox1.Checked == true)
+            {
+                this.textBox2.Enabled = true;
+                this.comboBox2.Enabled = false;
+            }
+            else 
+            {
+                this.textBox2.Enabled = false;
+                this.comboBox2.Enabled = true;
+            }
         }
 
 

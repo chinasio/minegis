@@ -28,8 +28,8 @@ namespace CoastalGIS.MainGIS
         public BufferForm(IMapControlDefault mapControl)
         {
             InitializeComponent();
-           // pMap = ParentForm.mapCtlMain.ActiveView.FocusMap;
-           // pActiveview = ParentForm.mapCtlMain.ActiveView;
+            // pMap = ParentForm.mapCtlMain.ActiveView.FocusMap;
+            // pActiveview = ParentForm.mapCtlMain.ActiveView;
             this.m_mapControl = mapControl;
         }
 
@@ -37,19 +37,19 @@ namespace CoastalGIS.MainGIS
         {
             switch (m_mapControl.MapUnits)
             {
-                case esriUnits .esriMeters:
+                case esriUnits.esriMeters:
                     label2.Text = "米";
                     break;
-                case esriUnits.esriKilometers :
+                case esriUnits.esriKilometers:
                     label2.Text = "千米";
                     break;
-                case esriUnits .esriCentimeters:
+                case esriUnits.esriCentimeters:
                     label2.Text = "分米";
                     break;
-                case esriUnits .esriDecimalDegrees:
+                case esriUnits.esriDecimalDegrees:
                     label2.Text = "度";
                     break;
-                case esriUnits .esriFeet:
+                case esriUnits.esriFeet:
                     label2.Text = "英忖";
                     break;
                 case esriUnits.esriInches:
@@ -97,7 +97,7 @@ namespace CoastalGIS.MainGIS
             IFeatureClass pFeatureclass;
             FileInfo n = new FileInfo(textBox1.Text);
             string openpath = n.Directory.ToString();//取路径的父目录用于存新的layer
-            pFeatureclass = CreatNewShapefile(openpath, n.Name,m_mapControl.SpatialReference);
+            pFeatureclass = CreatNewShapefile(openpath, n.Name, m_mapControl.SpatialReference);
 
             //IFeatureBuffer pFeatureBuffer = pFeatureclass.CreateFeatureBuffer();
             //IFeatureCursor pFeatureCursor = pFeatureclass.Insert(true);
@@ -136,7 +136,7 @@ namespace CoastalGIS.MainGIS
             bfConProp.GenerateCurves = true;
             bfConProp.UnionOverlappingBuffers = true;
             bfConProp.DensifyDeviation = -1;
-            IGeometryCollection outGeom=new GeometryBagClass ();
+            IGeometryCollection outGeom = new GeometryBagClass();
             bfCon.ConstructBuffers(inputGeom as IEnumGeometry, bufferDistence, outGeom);
             for (int i = 0; i < outGeom.GeometryCount; i++)
             {
@@ -156,9 +156,9 @@ namespace CoastalGIS.MainGIS
             this.Dispose();
         }
 
-        private IFeatureClass CreatNewShapefile(string Path, string Name,ISpatialReference sref)
+        private IFeatureClass CreatNewShapefile(string Path, string Name, ISpatialReference sref)
         {
-            IWorkspaceFactory workspaceFactory;
+            IWorkspaceFactory2 workspaceFactory;
             workspaceFactory = new ShapefileWorkspaceFactoryClass();
             IFeatureWorkspace featureWorkspace;
             featureWorkspace = workspaceFactory.OpenFromFile(Path, 0) as IFeatureWorkspace;
