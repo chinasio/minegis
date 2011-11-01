@@ -3757,11 +3757,11 @@
             // Design Time Panel Info:
             // 
             this.uiPanelManager1.BeginPanelInfo();
-            this.uiPanelManager1.AddDockPanelInfo(new System.Guid("a475d9ea-ddb1-48f3-b38d-052fa65d452a"), Janus.Windows.UI.Dock.PanelDockStyle.Right, new System.Drawing.Size(277, 580), true);
+            this.uiPanelManager1.AddDockPanelInfo(new System.Guid("a475d9ea-ddb1-48f3-b38d-052fa65d452a"), Janus.Windows.UI.Dock.PanelDockStyle.Right, new System.Drawing.Size(277, 552), true);
             this.uiPanelManager1.AddDockPanelInfo(new System.Guid("7fda6404-b42f-4b79-9374-c5b302a17b47"), Janus.Windows.UI.Dock.PanelGroupStyle.Tab, Janus.Windows.UI.Dock.PanelDockStyle.Left, true, new System.Drawing.Size(188, 552), true);
             this.uiPanelManager1.AddDockPanelInfo(new System.Guid("2768591c-caf6-45f6-91ac-ef46dddf9242"), new System.Guid("7fda6404-b42f-4b79-9374-c5b302a17b47"), -1, true);
             this.uiPanelManager1.AddDockPanelInfo(new System.Guid("c6136801-0517-4b02-b876-ee4f6db2a6b3"), new System.Guid("7fda6404-b42f-4b79-9374-c5b302a17b47"), -1, true);
-            this.uiPanelManager1.AddDockPanelInfo(new System.Guid("d523d36f-0e5e-4f59-abe7-7b96e98b675f"), Janus.Windows.UI.Dock.PanelDockStyle.Fill, new System.Drawing.Size(808, 552), true);
+            this.uiPanelManager1.AddDockPanelInfo(new System.Guid("d523d36f-0e5e-4f59-abe7-7b96e98b675f"), Janus.Windows.UI.Dock.PanelDockStyle.Fill, new System.Drawing.Size(557, 552), true);
             this.uiPanelManager1.AddDockPanelInfo(new System.Guid("a73588d5-2e7c-4e82-a918-154cdb252976"), Janus.Windows.UI.Dock.PanelDockStyle.Left, new System.Drawing.Size(200, 586), false);
             this.uiPanelManager1.AddFloatingPanelInfo(new System.Guid("7fda6404-b42f-4b79-9374-c5b302a17b47"), Janus.Windows.UI.Dock.PanelGroupStyle.Tab, true, new System.Drawing.Point(-1, -1), new System.Drawing.Size(-1, -1), false);
             this.uiPanelManager1.AddFloatingPanelInfo(new System.Guid("2768591c-caf6-45f6-91ac-ef46dddf9242"), new System.Drawing.Point(-1, -1), new System.Drawing.Size(-1, -1), false);
@@ -3778,14 +3778,13 @@
             // 
             // SearchPanel
             // 
-            this.SearchPanel.AutoHide = true;
             this.SearchPanel.FloatingLocation = new System.Drawing.Point(588, 508);
             this.SearchPanel.ForeColor = System.Drawing.SystemColors.Highlight;
             this.SearchPanel.Image = ((System.Drawing.Image)(resources.GetObject("SearchPanel.Image")));
             this.SearchPanel.InnerContainer = this.SearchPanelContainer;
-            this.SearchPanel.Location = new System.Drawing.Point(3, 3);
+            this.SearchPanel.Location = new System.Drawing.Point(748, 113);
             this.SearchPanel.Name = "SearchPanel";
-            this.SearchPanel.Size = new System.Drawing.Size(277, 580);
+            this.SearchPanel.Size = new System.Drawing.Size(277, 552);
             this.SearchPanel.TabIndex = 4;
             this.SearchPanel.Text = "属性数据浏览";
             this.SearchPanel.VisibleChanged += new System.EventHandler(this.SearchPanel_VisibleChanged);
@@ -3795,7 +3794,7 @@
             this.SearchPanelContainer.Controls.Add(this.dataGridView1);
             this.SearchPanelContainer.Location = new System.Drawing.Point(5, 23);
             this.SearchPanelContainer.Name = "SearchPanelContainer";
-            this.SearchPanelContainer.Size = new System.Drawing.Size(271, 556);
+            this.SearchPanelContainer.Size = new System.Drawing.Size(271, 528);
             this.SearchPanelContainer.TabIndex = 0;
             // 
             // dataGridView1
@@ -3829,9 +3828,10 @@
             dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
             this.dataGridView1.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
             this.dataGridView1.RowTemplate.Height = 23;
-            this.dataGridView1.Size = new System.Drawing.Size(271, 556);
+            this.dataGridView1.Size = new System.Drawing.Size(271, 528);
             this.dataGridView1.TabIndex = 0;
             this.dataGridView1.CellMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dataGridView1_CellMouseClick);
+            this.dataGridView1.RowHeaderMouseDoubleClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dataGridView1_RowHeaderMouseDoubleClick);
             // 
             // TOCPanel
             // 
@@ -3915,7 +3915,7 @@
             this.MapContainer.InnerContainer = this.MapContainerContainer;
             this.MapContainer.Location = new System.Drawing.Point(191, 113);
             this.MapContainer.Name = "MapContainer";
-            this.MapContainer.Size = new System.Drawing.Size(808, 552);
+            this.MapContainer.Size = new System.Drawing.Size(557, 552);
             this.MapContainer.TabIndex = 4;
             this.MapContainer.Text = "地图容器";
             // 
@@ -3924,7 +3924,7 @@
             this.MapContainerContainer.Controls.Add(this.uiTab1);
             this.MapContainerContainer.Location = new System.Drawing.Point(1, 1);
             this.MapContainerContainer.Name = "MapContainerContainer";
-            this.MapContainerContainer.Size = new System.Drawing.Size(806, 550);
+            this.MapContainerContainer.Size = new System.Drawing.Size(555, 550);
             this.MapContainerContainer.TabIndex = 0;
             // 
             // uiTab1
@@ -3932,7 +3932,7 @@
             this.uiTab1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.uiTab1.Location = new System.Drawing.Point(0, 0);
             this.uiTab1.Name = "uiTab1";
-            this.uiTab1.Size = new System.Drawing.Size(806, 550);
+            this.uiTab1.Size = new System.Drawing.Size(555, 550);
             this.uiTab1.TabIndex = 0;
             this.uiTab1.TabPages.AddRange(new Janus.Windows.UI.Tab.UITabPage[] {
             this.mapTab,
@@ -3947,7 +3947,7 @@
             this.mapTab.Controls.Add(this.mapCtlMain);
             this.mapTab.Location = new System.Drawing.Point(1, 20);
             this.mapTab.Name = "mapTab";
-            this.mapTab.Size = new System.Drawing.Size(804, 529);
+            this.mapTab.Size = new System.Drawing.Size(553, 529);
             this.mapTab.TabStop = true;
             this.mapTab.Text = "地图";
             // 
@@ -3966,7 +3966,7 @@
             this.mapCtlMain.Location = new System.Drawing.Point(0, 0);
             this.mapCtlMain.Name = "mapCtlMain";
             this.mapCtlMain.OcxState = ((System.Windows.Forms.AxHost.State)(resources.GetObject("mapCtlMain.OcxState")));
-            this.mapCtlMain.Size = new System.Drawing.Size(804, 529);
+            this.mapCtlMain.Size = new System.Drawing.Size(553, 529);
             this.mapCtlMain.TabIndex = 0;
             this.mapCtlMain.OnMouseDown += new ESRI.ArcGIS.Controls.IMapControlEvents2_Ax_OnMouseDownEventHandler(this.mapCtlMain_OnMouseDown);
             this.mapCtlMain.OnMouseMove += new ESRI.ArcGIS.Controls.IMapControlEvents2_Ax_OnMouseMoveEventHandler(this.mapCtlMain_OnMouseMove);
@@ -4421,6 +4421,7 @@
             this.ClientSize = new System.Drawing.Size(1028, 691);
             this.Controls.Add(this.MapContainer);
             this.Controls.Add(this.TOCPanel);
+            this.Controls.Add(this.SearchPanel);
             this.Controls.Add(this.uiStatusBar1);
             this.Controls.Add(this.TopRebar1);
             this.ForeColor = System.Drawing.SystemColors.Highlight;

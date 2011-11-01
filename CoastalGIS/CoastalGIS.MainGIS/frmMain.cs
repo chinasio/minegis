@@ -471,8 +471,8 @@ namespace CoastalGIS.MainGIS
                 uiComboBox4.SelectedIndex = 0;
                 StartEditing();
                 MapEditing.CreatShape m_CreateShapeStart = new CreatShape(m_CurrentLayer,this.m_dig);
-                m_CreateShapeStart.OnCreate(this.mapCtlMain.Object);
                 mapCtlMain.CurrentTool = (ITool)m_CreateShapeStart;
+                m_CreateShapeStart.OnCreate(this.mapCtlMain.Object);
             }
 
             if (e.Command.Key == "menuStop")
@@ -526,15 +526,14 @@ namespace CoastalGIS.MainGIS
                 if (m_bSketch)
                 {
                     CreatShape m_CreateShapeSketch = new CreatShape(m_CurrentLayer,this.m_dig);
-                    m_CreateShapeSketch.OnCreate(this.mapCtlMain.Object);
                     mapCtlMain.CurrentTool = (ITool)m_CreateShapeSketch;
+                    m_CreateShapeSketch.OnCreate(this.mapCtlMain.Object);
                 }
                 else if (m_bModify)
                 {
                     ModifyShape m_ModifyShape = new ModifyShape(m_CurrentLayer);
-                    m_ModifyShape.OnCreate(this.mapCtlMain.Object);
                     mapCtlMain.CurrentTool = (ITool)m_ModifyShape;
-
+                    m_ModifyShape.OnCreate(this.mapCtlMain.Object);
                 }
                 else if (m_bEditNode) 
                 {
@@ -1009,56 +1008,7 @@ namespace CoastalGIS.MainGIS
         }
 
         private void dataGridView1_CellMouseClick(object sender, DataGridViewCellMouseEventArgs e)
-        {//点击属性表
-            if (e.RowIndex != -1)
-            {
-                IFeature feat = null;
-                try
-                {
-                    IFeatureClass featCls = (m_layer as IFeatureLayer).FeatureClass;
-                    //寻找该行记录对应的要素
-                    feat = featCls.GetFeature(Convert.ToInt32(this.dataGridView1.Rows[e.RowIndex].Cells[0].Value));
-                }
-                catch (Exception ex)
-                {
-                    feat = null;
-                }
-                if (feat != null)
-                {
-                    //要素的定义
-                    if (feat.Shape.GeometryType == esriGeometryType.esriGeometryPoint)
-                    {
-                        this.mapCtlMain.CenterAt((IPoint)feat.Shape);
-                    }
-                    else
-                    {
-                        IEnvelope env = feat.Shape.Envelope;
-                        env.Expand(5, 5, true);
-                        this.mapCtlMain.ActiveView.Extent = env;
-                    }
-                    this.mapCtlMain.ActiveView.Refresh();
-                    this.mapCtlMain.ActiveView.ScreenDisplay.UpdateWindow();
-                    //用于解决先定位后闪烁的问题
-                    //自定义闪烁功能
-                    switch (feat.Shape.GeometryType)
-                    {
-                        case esriGeometryType.esriGeometryPoint:
-                            FlashFeature.FlashPoint(this.m_mapControl, this.mapCtlMain.ActiveView.ScreenDisplay, feat.Shape);
-                            break;
-                        case esriGeometryType.esriGeometryPolyline:
-                            FlashFeature.FlashLine(this.m_mapControl, this.mapCtlMain.ActiveView.ScreenDisplay, feat.Shape);
-                            break;
-                        case esriGeometryType.esriGeometryPolygon:
-                            FlashFeature.FlashPolygon(this.m_mapControl, this.mapCtlMain.ActiveView.ScreenDisplay, feat.Shape);
-                            break;
-                        default:
-                            break;
-                    }
-
-                    this.mapCtlMain.ActiveView.PartialRefresh(esriViewDrawPhase.esriViewGeoSelection, null, null);
-                    this.mapCtlMain.ActiveView.PartialRefresh(esriViewDrawPhase.esriViewGeography, null, null);
-                }
-            }
+        {
         }
 
         private void ClearAttribute_Click(object sender, EventArgs e)
@@ -1975,31 +1925,34 @@ namespace CoastalGIS.MainGIS
         private void uiComboBox5_SelectedIndexChanged(object sender, EventArgs e)
         {
             this.menuSketch.Enabled = Janus.Windows.UI.InheritableBoolean.True;
-            for (int i = 0; i <= m_Map.LayerCount - 1; i++)
+            //for (int i = 0; i <= m_Map.LayerCount - 1; i++)
+            //{
+            //    if (uiComboBox5.SelectedIndex!=-1)
+            //    {
+            //        //if (m_Map.get_Layer(i).Name == uiComboBox5.SelectedItem.ToString())
+            //        //{
+            //        //    m_CurrentLayer = m_Map.get_Layer(i);
+            //        //    break;
+            //        //}
+            //        m_CurrentLayer = m_Map.get_Layer(i);
+            //        break;
+            //    }
+            //}
+            if (uiComboBox5.SelectedIndex!=-1)
             {
-                if (uiComboBox5.SelectedIndex!=-1)
-                {
-                    if (m_Map.get_Layer(i).Name == uiComboBox5.SelectedItem.ToString())
-                    {
-                        m_CurrentLayer = m_Map.get_Layer(i);
-                        break;
-                    }
-                }
-
-
+                m_CurrentLayer = m_Map.get_Layer(uiComboBox5.SelectedIndex);
             }
             if (m_bSketch)
             {
                 CreatShape m_CreatShape = new CreatShape(m_CurrentLayer,this.m_dig);
-                m_CreatShape.OnCreate(this.mapCtlMain.Object);
                 mapCtlMain.CurrentTool = (ITool)m_CreatShape;
-
+                m_CreatShape.OnCreate(this.mapCtlMain.Object);
             }
             else if (m_bModify)
             {
-                ModifyShape m_ModifyShape = new ModifyShape(m_CurrentLayer);
-                m_ModifyShape.OnCreate(this.mapCtlMain.Object);
+                ModifyShape m_ModifyShape = new ModifyShape(m_CurrentLayer); 
                 mapCtlMain.CurrentTool = (ITool)m_ModifyShape;
+                m_ModifyShape.OnCreate(this.mapCtlMain.Object);
             }
         }
 
@@ -2592,6 +2545,60 @@ namespace CoastalGIS.MainGIS
         {
             frmSelectBand frmB = new frmSelectBand(this.m_mapControl, (IRasterLayer)this.m_layer,this.m_workSpace);
             frmB.ShowDialog();
+        }
+
+        private void dataGridView1_RowHeaderMouseDoubleClick(object sender, DataGridViewCellMouseEventArgs e)
+        {
+            //点击属性表
+            if (e.RowIndex != -1)
+            {
+                IFeature feat = null;
+                try
+                {
+                    IFeatureClass featCls = (m_layer as IFeatureLayer).FeatureClass;
+                    //寻找该行记录对应的要素
+                    feat = featCls.GetFeature(Convert.ToInt32(this.dataGridView1.Rows[e.RowIndex].Cells[0].Value));
+                }
+                catch (Exception ex)
+                {
+                    feat = null;
+                }
+                if (feat != null)
+                {
+                    //要素的定义
+                    if (feat.Shape.GeometryType == esriGeometryType.esriGeometryPoint)
+                    {
+                        this.mapCtlMain.CenterAt((IPoint)feat.Shape);
+                    }
+                    else
+                    {
+                        IEnvelope env = feat.Shape.Envelope;
+                        env.Expand(5, 5, true);
+                        this.mapCtlMain.ActiveView.Extent = env;
+                    }
+                    this.mapCtlMain.ActiveView.Refresh();
+                    this.mapCtlMain.ActiveView.ScreenDisplay.UpdateWindow();
+                    //用于解决先定位后闪烁的问题
+                    //自定义闪烁功能
+                    switch (feat.Shape.GeometryType)
+                    {
+                        case esriGeometryType.esriGeometryPoint:
+                            FlashFeature.FlashPoint(this.m_mapControl, this.mapCtlMain.ActiveView.ScreenDisplay, feat.Shape);
+                            break;
+                        case esriGeometryType.esriGeometryPolyline:
+                            FlashFeature.FlashLine(this.m_mapControl, this.mapCtlMain.ActiveView.ScreenDisplay, feat.Shape);
+                            break;
+                        case esriGeometryType.esriGeometryPolygon:
+                            FlashFeature.FlashPolygon(this.m_mapControl, this.mapCtlMain.ActiveView.ScreenDisplay, feat.Shape);
+                            break;
+                        default:
+                            break;
+                    }
+
+                    this.mapCtlMain.ActiveView.PartialRefresh(esriViewDrawPhase.esriViewGeoSelection, null, null);
+                    this.mapCtlMain.ActiveView.PartialRefresh(esriViewDrawPhase.esriViewGeography, null, null);
+                }
+            }
         }
 
 

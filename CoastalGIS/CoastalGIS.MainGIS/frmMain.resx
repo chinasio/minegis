@@ -520,7 +520,7 @@
         AAEAAAD/////AQAAAAAAAAAMAgAAAFdTeXN0ZW0uV2luZG93cy5Gb3JtcywgVmVyc2lvbj0yLjAuMC4w
         LCBDdWx0dXJlPW5ldXRyYWwsIFB1YmxpY0tleVRva2VuPWI3N2E1YzU2MTkzNGUwODkFAQAAACFTeXN0
         ZW0uV2luZG93cy5Gb3Jtcy5BeEhvc3QrU3RhdGUBAAAABERhdGEHAgIAAAAJAwAAAA8DAAAAHwcAAAIB
-        AAAAAQAAAAAAAAAAAAAAAAoHAAALAAAAAgAAAAIAAAAKAAAAFAAAAAEAAAAJAAAAABlTAACsNgAAAAAB
+        AAAAAQAAAAAAAAAAAAAAAAoHAAALAAAAAgAAAAIAAAAKAAAAFAAAAAEAAAAJAAAAACc5AACsNgAAAAAB
         AAAAAQAAAAAAAAAAAAAAAAAAAA0AAAAAAAAAAAAAAAAAAAAAAP//AP//dqq95jVN0BGYvgCAX3ztIQAA
         AAAfAAgAAABNAGEAcAAAAAIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA/////4O7RpYSldIRovYIAAm2
         8isBAAAABgABAAAAAAAAABQAAAA8AEQAZQBmAGEAdQBsAHQAPgAAAP////8AAAAAAAAAAAAAAAAAAAAA
@@ -660,6 +660,16 @@
         AAAAAQAAAAAAAAAAAAAAAHUAAAAHAAAAAgAAAAIAAAAKAAAAFAAAAAEAAAAJAAAAABYAAABtAGEAcABD
         AHQAbABNAGEAaQBuAAAAAAAAAAEAAAAAAAAA//8AAAAAAAAAAAANAAAAAAAAAAAAAAAAAAAAAADPEgAA
         ZjQAAAAAAgAAAAAAAAAAAAAL
+</value>
+  </data>
+  <data name="SearchPanel.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
+        YQUAAAAgY0hSTQAAeiYAAICEAAD6AAAAgOgAAHUwAADqYAAAOpgAABdwnLpRPAAAAMxJREFUOE/Nk7EN
+        AyEMRdmJndiJBTJMRE/FAihFmID42+BgwjWpDgkdMubz/H04d6sRY+qBpg+xr2BX8R94HMbw3gpcxY1A
+        TKnzTXQ7CCYFYia+iasIkjAez7eUMRLXONY7nRHAwZUAFCGILxwn0aMAlFtrTJBeXQlYYJDxHkFC0IhM
+        ZCTknLVeR7fBFwiUUlhYvBABrBl/tkjRJ+b4mrJ0L3xbPU2qtRKiOH5qI/Yxd5OZQOob7bq1gFKunTj1
+        /uQBTDZ/qQ/mvfz9qD/7apfPnieLMwAAAABJRU5ErkJggg==
 </value>
   </data>
   <data name="$this.Icon" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
@@ -2109,16 +2119,6 @@
   <metadata name="uiPanelManager1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>500, 15</value>
   </metadata>
-  <data name="SearchPanel.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
-    <value>
-        iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
-        YQUAAAAgY0hSTQAAeiYAAICEAAD6AAAAgOgAAHUwAADqYAAAOpgAABdwnLpRPAAAAMxJREFUOE/Nk7EN
-        AyEMRdmJndiJBTJMRE/FAihFmID42+BgwjWpDgkdMubz/H04d6sRY+qBpg+xr2BX8R94HMbw3gpcxY1A
-        TKnzTXQ7CCYFYia+iasIkjAez7eUMRLXONY7nRHAwZUAFCGILxwn0aMAlFtrTJBeXQlYYJDxHkFC0IhM
-        ZCTknLVeR7fBFwiUUlhYvBABrBl/tkjRJ+b4mrJ0L3xbPU2qtRKiOH5qI/Yxd5OZQOob7bq1gFKunTj1
-        /uQBTDZ/qQ/mvfz9qD/7apfPnieLMwAAAABJRU5ErkJggg==
-</value>
-  </data>
   <data name="SDEPanel.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
