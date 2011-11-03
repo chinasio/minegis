@@ -91,6 +91,9 @@
     <Reference Include="ESRI.ArcGIS.GlobeCore, Version=9.3.0.1770, Culture=neutral, PublicKeyToken=8fc3cc631e44ad86" />
     <Reference Include="ESRI.ArcGIS.Output, Version=9.3.0.1770, Culture=neutral, PublicKeyToken=8fc3cc631e44ad86" />
     <Reference Include="ESRI.ArcGIS.SampleTools, Version=9.3.0.1770, Culture=neutral, PublicKeyToken=8fc3cc631e44ad86, processorArchitecture=MSIL" />
+    <Reference Include="ESRI.ArcGIS.SpatialAnalystTools, Version=9.3.0.1770, Culture=neutral, PublicKeyToken=8fc3cc631e44ad86, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+    </Reference>
     <Reference Include="ESRI.ArcGIS.System, Version=9.3.0.1770, Culture=neutral, PublicKeyToken=8fc3cc631e44ad86" />
     <Reference Include="ESRI.ArcGIS.SystemUI, Version=9.3.0.1770, Culture=neutral, PublicKeyToken=8fc3cc631e44ad86" />
     <Reference Include="ESRI.ArcGIS.Utility, Version=9.3.0.1770, Culture=neutral, PublicKeyToken=8fc3cc631e44ad86, processorArchitecture=MSIL" />
@@ -202,6 +205,7 @@
     <Compile Include="Class\AddCADToFeatures.cs" />
     <Compile Include="Class\AddCADToRaster.cs" />
     <Compile Include="Class\AreaPrintMapClass.cs" />
+    <Compile Include="Class\ClipLayer.cs" />
     <Compile Include="Class\ControlsSynchronizer.cs" />
     <Compile Include="Class\AppConfig.cs" />
     <Compile Include="Class\FlashFeature.cs" />
