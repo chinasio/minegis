@@ -30,71 +30,71 @@
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmMain));
-            Janus.Windows.UI.CommandBars.UICommandCategory uiCommandCategory1 = new Janus.Windows.UI.CommandBars.UICommandCategory();
-            Janus.Windows.UI.CommandBars.UICommandCategory uiCommandCategory2 = new Janus.Windows.UI.CommandBars.UICommandCategory();
-            Janus.Windows.UI.CommandBars.UICommandCategory uiCommandCategory3 = new Janus.Windows.UI.CommandBars.UICommandCategory();
-            Janus.Windows.UI.CommandBars.UICommandCategory uiCommandCategory4 = new Janus.Windows.UI.CommandBars.UICommandCategory();
-            Janus.Windows.UI.CommandBars.UICommandCategory uiCommandCategory5 = new Janus.Windows.UI.CommandBars.UICommandCategory();
-            Janus.Windows.UI.CommandBars.UICommandCategory uiCommandCategory6 = new Janus.Windows.UI.CommandBars.UICommandCategory();
-            Janus.Windows.UI.CommandBars.UICommandCategory uiCommandCategory7 = new Janus.Windows.UI.CommandBars.UICommandCategory();
-            Janus.Windows.UI.CommandBars.UICommandCategory uiCommandCategory8 = new Janus.Windows.UI.CommandBars.UICommandCategory();
-            Janus.Windows.UI.CommandBars.UICommandCategory uiCommandCategory9 = new Janus.Windows.UI.CommandBars.UICommandCategory();
-            Janus.Windows.UI.CommandBars.UICommandCategory uiCommandCategory10 = new Janus.Windows.UI.CommandBars.UICommandCategory();
-            Janus.Windows.UI.CommandBars.UICommandCategory uiCommandCategory11 = new Janus.Windows.UI.CommandBars.UICommandCategory();
-            Janus.Windows.UI.CommandBars.UICommandCategory uiCommandCategory12 = new Janus.Windows.UI.CommandBars.UICommandCategory();
-            Janus.Windows.EditControls.UIComboBoxItem uiComboBoxItem1 = new Janus.Windows.EditControls.UIComboBoxItem();
-            Janus.Windows.EditControls.UIComboBoxItem uiComboBoxItem2 = new Janus.Windows.EditControls.UIComboBoxItem();
-            Janus.Windows.EditControls.UIComboBoxItem uiComboBoxItem3 = new Janus.Windows.EditControls.UIComboBoxItem();
-            Janus.Windows.EditControls.UIComboBoxItem uiComboBoxItem4 = new Janus.Windows.EditControls.UIComboBoxItem();
-            Janus.Windows.EditControls.UIComboBoxItem uiComboBoxItem5 = new Janus.Windows.EditControls.UIComboBoxItem();
-            Janus.Windows.EditControls.UIComboBoxItem uiComboBoxItem6 = new Janus.Windows.EditControls.UIComboBoxItem();
-            Janus.Windows.EditControls.UIComboBoxItem uiComboBoxItem7 = new Janus.Windows.EditControls.UIComboBoxItem();
-            Janus.Windows.EditControls.UIComboBoxItem uiComboBoxItem8 = new Janus.Windows.EditControls.UIComboBoxItem();
-            Janus.Windows.EditControls.UIComboBoxItem uiComboBoxItem9 = new Janus.Windows.EditControls.UIComboBoxItem();
-            Janus.Windows.EditControls.UIComboBoxItem uiComboBoxItem10 = new Janus.Windows.EditControls.UIComboBoxItem();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.ListViewItem listViewItem1 = new System.Windows.Forms.ListViewItem(new string[] {
+            Janus.Windows.UI.CommandBars.UICommandCategory uiCommandCategory13 = new Janus.Windows.UI.CommandBars.UICommandCategory();
+            Janus.Windows.UI.CommandBars.UICommandCategory uiCommandCategory14 = new Janus.Windows.UI.CommandBars.UICommandCategory();
+            Janus.Windows.UI.CommandBars.UICommandCategory uiCommandCategory15 = new Janus.Windows.UI.CommandBars.UICommandCategory();
+            Janus.Windows.UI.CommandBars.UICommandCategory uiCommandCategory16 = new Janus.Windows.UI.CommandBars.UICommandCategory();
+            Janus.Windows.UI.CommandBars.UICommandCategory uiCommandCategory17 = new Janus.Windows.UI.CommandBars.UICommandCategory();
+            Janus.Windows.UI.CommandBars.UICommandCategory uiCommandCategory18 = new Janus.Windows.UI.CommandBars.UICommandCategory();
+            Janus.Windows.UI.CommandBars.UICommandCategory uiCommandCategory19 = new Janus.Windows.UI.CommandBars.UICommandCategory();
+            Janus.Windows.UI.CommandBars.UICommandCategory uiCommandCategory20 = new Janus.Windows.UI.CommandBars.UICommandCategory();
+            Janus.Windows.UI.CommandBars.UICommandCategory uiCommandCategory21 = new Janus.Windows.UI.CommandBars.UICommandCategory();
+            Janus.Windows.UI.CommandBars.UICommandCategory uiCommandCategory22 = new Janus.Windows.UI.CommandBars.UICommandCategory();
+            Janus.Windows.UI.CommandBars.UICommandCategory uiCommandCategory23 = new Janus.Windows.UI.CommandBars.UICommandCategory();
+            Janus.Windows.UI.CommandBars.UICommandCategory uiCommandCategory24 = new Janus.Windows.UI.CommandBars.UICommandCategory();
+            Janus.Windows.EditControls.UIComboBoxItem uiComboBoxItem11 = new Janus.Windows.EditControls.UIComboBoxItem();
+            Janus.Windows.EditControls.UIComboBoxItem uiComboBoxItem12 = new Janus.Windows.EditControls.UIComboBoxItem();
+            Janus.Windows.EditControls.UIComboBoxItem uiComboBoxItem13 = new Janus.Windows.EditControls.UIComboBoxItem();
+            Janus.Windows.EditControls.UIComboBoxItem uiComboBoxItem14 = new Janus.Windows.EditControls.UIComboBoxItem();
+            Janus.Windows.EditControls.UIComboBoxItem uiComboBoxItem15 = new Janus.Windows.EditControls.UIComboBoxItem();
+            Janus.Windows.EditControls.UIComboBoxItem uiComboBoxItem16 = new Janus.Windows.EditControls.UIComboBoxItem();
+            Janus.Windows.EditControls.UIComboBoxItem uiComboBoxItem17 = new Janus.Windows.EditControls.UIComboBoxItem();
+            Janus.Windows.EditControls.UIComboBoxItem uiComboBoxItem18 = new Janus.Windows.EditControls.UIComboBoxItem();
+            Janus.Windows.EditControls.UIComboBoxItem uiComboBoxItem19 = new Janus.Windows.EditControls.UIComboBoxItem();
+            Janus.Windows.EditControls.UIComboBoxItem uiComboBoxItem20 = new Janus.Windows.EditControls.UIComboBoxItem();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.ListViewItem listViewItem13 = new System.Windows.Forms.ListViewItem(new string[] {
             "名称",
             ""}, -1);
-            System.Windows.Forms.ListViewItem listViewItem2 = new System.Windows.Forms.ListViewItem(new string[] {
+            System.Windows.Forms.ListViewItem listViewItem14 = new System.Windows.Forms.ListViewItem(new string[] {
             "入库时间",
             ""}, -1);
-            System.Windows.Forms.ListViewItem listViewItem3 = new System.Windows.Forms.ListViewItem(new string[] {
+            System.Windows.Forms.ListViewItem listViewItem15 = new System.Windows.Forms.ListViewItem(new string[] {
             "数据类型",
             ""}, -1);
-            System.Windows.Forms.ListViewItem listViewItem4 = new System.Windows.Forms.ListViewItem(new string[] {
+            System.Windows.Forms.ListViewItem listViewItem16 = new System.Windows.Forms.ListViewItem(new string[] {
             "源格式",
             ""}, -1);
-            System.Windows.Forms.ListViewItem listViewItem5 = new System.Windows.Forms.ListViewItem(new string[] {
+            System.Windows.Forms.ListViewItem listViewItem17 = new System.Windows.Forms.ListViewItem(new string[] {
             "数据集",
             ""}, -1);
-            System.Windows.Forms.ListViewItem listViewItem6 = new System.Windows.Forms.ListViewItem(new string[] {
+            System.Windows.Forms.ListViewItem listViewItem18 = new System.Windows.Forms.ListViewItem(new string[] {
             "别名",
             ""}, -1);
-            System.Windows.Forms.ListViewItem listViewItem7 = new System.Windows.Forms.ListViewItem(new string[] {
+            System.Windows.Forms.ListViewItem listViewItem19 = new System.Windows.Forms.ListViewItem(new string[] {
             "高程基准",
             ""}, -1);
-            System.Windows.Forms.ListViewItem listViewItem8 = new System.Windows.Forms.ListViewItem(new string[] {
+            System.Windows.Forms.ListViewItem listViewItem20 = new System.Windows.Forms.ListViewItem(new string[] {
             "图幅号",
             ""}, -1);
-            System.Windows.Forms.ListViewItem listViewItem9 = new System.Windows.Forms.ListViewItem(new string[] {
+            System.Windows.Forms.ListViewItem listViewItem21 = new System.Windows.Forms.ListViewItem(new string[] {
             "平面坐标系",
             ""}, -1);
-            System.Windows.Forms.ListViewItem listViewItem10 = new System.Windows.Forms.ListViewItem(new string[] {
+            System.Windows.Forms.ListViewItem listViewItem22 = new System.Windows.Forms.ListViewItem(new string[] {
             "比例尺",
             ""}, -1);
-            System.Windows.Forms.ListViewItem listViewItem11 = new System.Windows.Forms.ListViewItem(new string[] {
+            System.Windows.Forms.ListViewItem listViewItem23 = new System.Windows.Forms.ListViewItem(new string[] {
             "数据来源",
             ""}, -1);
-            System.Windows.Forms.ListViewItem listViewItem12 = new System.Windows.Forms.ListViewItem(new string[] {
+            System.Windows.Forms.ListViewItem listViewItem24 = new System.Windows.Forms.ListViewItem(new string[] {
             "编辑人",
             ""}, -1);
-            Janus.Windows.UI.StatusBar.UIStatusBarPanel uiStatusBarPanel1 = new Janus.Windows.UI.StatusBar.UIStatusBarPanel();
-            Janus.Windows.UI.StatusBar.UIStatusBarPanel uiStatusBarPanel2 = new Janus.Windows.UI.StatusBar.UIStatusBarPanel();
-            Janus.Windows.UI.StatusBar.UIStatusBarPanel uiStatusBarPanel3 = new Janus.Windows.UI.StatusBar.UIStatusBarPanel();
-            Janus.Windows.UI.StatusBar.UIStatusBarPanel uiStatusBarPanel4 = new Janus.Windows.UI.StatusBar.UIStatusBarPanel();
+            Janus.Windows.UI.StatusBar.UIStatusBarPanel uiStatusBarPanel5 = new Janus.Windows.UI.StatusBar.UIStatusBarPanel();
+            Janus.Windows.UI.StatusBar.UIStatusBarPanel uiStatusBarPanel6 = new Janus.Windows.UI.StatusBar.UIStatusBarPanel();
+            Janus.Windows.UI.StatusBar.UIStatusBarPanel uiStatusBarPanel7 = new Janus.Windows.UI.StatusBar.UIStatusBarPanel();
+            Janus.Windows.UI.StatusBar.UIStatusBarPanel uiStatusBarPanel8 = new Janus.Windows.UI.StatusBar.UIStatusBarPanel();
             this.imageList1 = new System.Windows.Forms.ImageList(this.components);
             this.File = new Janus.Windows.UI.CommandBars.UICommand("File");
             this.File1 = new Janus.Windows.UI.CommandBars.UICommand("File");
@@ -706,31 +706,31 @@
             // uiCommandManager1
             // 
             this.uiCommandManager1.BottomRebar = this.BottomRebar1;
-            uiCommandCategory1.CategoryName = "Standard";
-            uiCommandCategory2.CategoryName = "Navigation";
-            uiCommandCategory3.CategoryName = "DB";
-            uiCommandCategory4.CategoryName = "Edit";
-            uiCommandCategory5.CategoryName = "SA";
-            uiCommandCategory6.CategoryName = "Carto";
-            uiCommandCategory7.CategoryName = "Help";
-            uiCommandCategory8.CategoryName = "Tool";
-            uiCommandCategory9.CategoryName = "CallMap";
-            uiCommandCategory10.CategoryName = "3D";
-            uiCommandCategory11.CategoryName = "Index";
-            uiCommandCategory12.CategoryName = "RSA";
+            uiCommandCategory13.CategoryName = "Standard";
+            uiCommandCategory14.CategoryName = "Navigation";
+            uiCommandCategory15.CategoryName = "DB";
+            uiCommandCategory16.CategoryName = "Edit";
+            uiCommandCategory17.CategoryName = "SA";
+            uiCommandCategory18.CategoryName = "Carto";
+            uiCommandCategory19.CategoryName = "Help";
+            uiCommandCategory20.CategoryName = "Tool";
+            uiCommandCategory21.CategoryName = "CallMap";
+            uiCommandCategory22.CategoryName = "3D";
+            uiCommandCategory23.CategoryName = "Index";
+            uiCommandCategory24.CategoryName = "RSA";
             this.uiCommandManager1.Categories.AddRange(new Janus.Windows.UI.CommandBars.UICommandCategory[] {
-            uiCommandCategory1,
-            uiCommandCategory2,
-            uiCommandCategory3,
-            uiCommandCategory4,
-            uiCommandCategory5,
-            uiCommandCategory6,
-            uiCommandCategory7,
-            uiCommandCategory8,
-            uiCommandCategory9,
-            uiCommandCategory10,
-            uiCommandCategory11,
-            uiCommandCategory12});
+            uiCommandCategory13,
+            uiCommandCategory14,
+            uiCommandCategory15,
+            uiCommandCategory16,
+            uiCommandCategory17,
+            uiCommandCategory18,
+            uiCommandCategory19,
+            uiCommandCategory20,
+            uiCommandCategory21,
+            uiCommandCategory22,
+            uiCommandCategory23,
+            uiCommandCategory24});
             this.uiCommandManager1.CommandBars.AddRange(new Janus.Windows.UI.CommandBars.UICommandBar[] {
             this.uiCommandBar2,
             this.NavigationBar,
@@ -1175,7 +1175,7 @@
             this.ExportMapToolBar.Name = "ExportMapToolBar";
             this.ExportMapToolBar.RowIndex = 3;
             this.ExportMapToolBar.ShowToolTips = Janus.Windows.UI.InheritableBoolean.True;
-            this.ExportMapToolBar.Size = new System.Drawing.Size(338, 28);
+            this.ExportMapToolBar.Size = new System.Drawing.Size(246, 28);
             this.ExportMapToolBar.Text = "地图输出";
             this.ExportMapToolBar.Visible = false;
             // 
@@ -1292,7 +1292,7 @@
             this.EditingBar.Location = new System.Drawing.Point(464, 26);
             this.EditingBar.Name = "EditingBar";
             this.EditingBar.RowIndex = 1;
-            this.EditingBar.Size = new System.Drawing.Size(363, 28);
+            this.EditingBar.Size = new System.Drawing.Size(235, 28);
             this.EditingBar.Text = "要素编辑";
             // 
             // menuEditing1
@@ -1328,19 +1328,19 @@
             // 
             // uiComboBox4
             // 
-            uiComboBoxItem1.FormatStyle.Alpha = 0;
-            uiComboBoxItem1.IsSeparator = false;
-            uiComboBoxItem1.Text = "新建要素";
-            uiComboBoxItem2.FormatStyle.Alpha = 0;
-            uiComboBoxItem2.IsSeparator = false;
-            uiComboBoxItem2.Text = "移动要素";
-            uiComboBoxItem3.FormatStyle.Alpha = 0;
-            uiComboBoxItem3.IsSeparator = false;
-            uiComboBoxItem3.Text = "编辑要素节点";
+            uiComboBoxItem11.FormatStyle.Alpha = 0;
+            uiComboBoxItem11.IsSeparator = false;
+            uiComboBoxItem11.Text = "新建要素";
+            uiComboBoxItem12.FormatStyle.Alpha = 0;
+            uiComboBoxItem12.IsSeparator = false;
+            uiComboBoxItem12.Text = "移动要素";
+            uiComboBoxItem13.FormatStyle.Alpha = 0;
+            uiComboBoxItem13.IsSeparator = false;
+            uiComboBoxItem13.Text = "编辑要素节点";
             this.uiComboBox4.Items.AddRange(new Janus.Windows.EditControls.UIComboBoxItem[] {
-            uiComboBoxItem1,
-            uiComboBoxItem2,
-            uiComboBoxItem3});
+            uiComboBoxItem11,
+            uiComboBoxItem12,
+            uiComboBoxItem13});
             this.uiComboBox4.Location = new System.Drawing.Point(99, 3);
             this.uiComboBox4.Name = "uiComboBox4";
             this.uiComboBox4.Size = new System.Drawing.Size(100, 21);
@@ -1462,7 +1462,7 @@
             this.uiCommandBar1.Name = "uiCommandBar1";
             this.uiCommandBar1.RowIndex = 2;
             this.uiCommandBar1.ShowToolTips = Janus.Windows.UI.InheritableBoolean.True;
-            this.uiCommandBar1.Size = new System.Drawing.Size(127, 28);
+            this.uiCommandBar1.Size = new System.Drawing.Size(60, 28);
             this.uiCommandBar1.Text = "空间分析";
             // 
             // menuSelectbyAttribute2
@@ -1575,7 +1575,7 @@
             this.ThreeDBar.Location = new System.Drawing.Point(338, 82);
             this.ThreeDBar.Name = "ThreeDBar";
             this.ThreeDBar.RowIndex = 3;
-            this.ThreeDBar.Size = new System.Drawing.Size(305, 28);
+            this.ThreeDBar.Size = new System.Drawing.Size(46, 28);
             this.ThreeDBar.Text = "三维标准工具栏";
             this.ThreeDBar.Visible = false;
             // 
@@ -2239,22 +2239,22 @@
             // 
             this.uiComboBox1.ComboStyle = Janus.Windows.EditControls.ComboStyle.DropDownList;
             this.uiComboBox1.Enabled = false;
-            uiComboBoxItem4.FormatStyle.Alpha = 0;
-            uiComboBoxItem4.IsSeparator = false;
-            uiComboBoxItem4.Text = "Office2007";
-            uiComboBoxItem4.Value = "Office2007";
-            uiComboBoxItem5.FormatStyle.Alpha = 0;
-            uiComboBoxItem5.IsSeparator = false;
-            uiComboBoxItem5.Text = "Office2003";
-            uiComboBoxItem5.Value = "Office2003";
-            uiComboBoxItem6.FormatStyle.Alpha = 0;
-            uiComboBoxItem6.IsSeparator = false;
-            uiComboBoxItem6.Text = "标准";
-            uiComboBoxItem6.Value = "Standard";
+            uiComboBoxItem14.FormatStyle.Alpha = 0;
+            uiComboBoxItem14.IsSeparator = false;
+            uiComboBoxItem14.Text = "Office2007";
+            uiComboBoxItem14.Value = "Office2007";
+            uiComboBoxItem15.FormatStyle.Alpha = 0;
+            uiComboBoxItem15.IsSeparator = false;
+            uiComboBoxItem15.Text = "Office2003";
+            uiComboBoxItem15.Value = "Office2003";
+            uiComboBoxItem16.FormatStyle.Alpha = 0;
+            uiComboBoxItem16.IsSeparator = false;
+            uiComboBoxItem16.Text = "标准";
+            uiComboBoxItem16.Value = "Standard";
             this.uiComboBox1.Items.AddRange(new Janus.Windows.EditControls.UIComboBoxItem[] {
-            uiComboBoxItem4,
-            uiComboBoxItem5,
-            uiComboBoxItem6});
+            uiComboBoxItem14,
+            uiComboBoxItem15,
+            uiComboBoxItem16});
             this.uiComboBox1.Location = new System.Drawing.Point(222, 3);
             this.uiComboBox1.Name = "uiComboBox1";
             this.uiComboBox1.Size = new System.Drawing.Size(80, 21);
@@ -2276,27 +2276,27 @@
             // 
             this.uiComboBox2.ComboStyle = Janus.Windows.EditControls.ComboStyle.DropDownList;
             this.uiComboBox2.Enabled = false;
-            uiComboBoxItem7.FormatStyle.Alpha = 0;
-            uiComboBoxItem7.IsSeparator = false;
-            uiComboBoxItem7.Text = "蓝色";
-            uiComboBoxItem7.Value = "Blue";
-            uiComboBoxItem8.FormatStyle.Alpha = 0;
-            uiComboBoxItem8.IsSeparator = false;
-            uiComboBoxItem8.Text = "银色";
-            uiComboBoxItem8.Value = "Silver";
-            uiComboBoxItem9.FormatStyle.Alpha = 0;
-            uiComboBoxItem9.IsSeparator = false;
-            uiComboBoxItem9.Text = "黑色";
-            uiComboBoxItem9.Value = "Black";
-            uiComboBoxItem10.FormatStyle.Alpha = 0;
-            uiComboBoxItem10.IsSeparator = false;
-            uiComboBoxItem10.Text = "自定义";
-            uiComboBoxItem10.Value = "Custom";
+            uiComboBoxItem17.FormatStyle.Alpha = 0;
+            uiComboBoxItem17.IsSeparator = false;
+            uiComboBoxItem17.Text = "蓝色";
+            uiComboBoxItem17.Value = "Blue";
+            uiComboBoxItem18.FormatStyle.Alpha = 0;
+            uiComboBoxItem18.IsSeparator = false;
+            uiComboBoxItem18.Text = "银色";
+            uiComboBoxItem18.Value = "Silver";
+            uiComboBoxItem19.FormatStyle.Alpha = 0;
+            uiComboBoxItem19.IsSeparator = false;
+            uiComboBoxItem19.Text = "黑色";
+            uiComboBoxItem19.Value = "Black";
+            uiComboBoxItem20.FormatStyle.Alpha = 0;
+            uiComboBoxItem20.IsSeparator = false;
+            uiComboBoxItem20.Text = "自定义";
+            uiComboBoxItem20.Value = "Custom";
             this.uiComboBox2.Items.AddRange(new Janus.Windows.EditControls.UIComboBoxItem[] {
-            uiComboBoxItem7,
-            uiComboBoxItem8,
-            uiComboBoxItem9,
-            uiComboBoxItem10});
+            uiComboBoxItem17,
+            uiComboBoxItem18,
+            uiComboBoxItem19,
+            uiComboBoxItem20});
             this.uiComboBox2.Location = new System.Drawing.Point(304, 3);
             this.uiComboBox2.Name = "uiComboBox2";
             this.uiComboBox2.Size = new System.Drawing.Size(75, 21);
@@ -3799,34 +3799,34 @@
             // 
             // dataGridView1
             // 
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("宋体", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridView1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("宋体", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            dataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridView1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle4;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("宋体", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dataGridView1.DefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle5.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle5.Font = new System.Drawing.Font("宋体", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            dataGridViewCellStyle5.ForeColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dataGridView1.DefaultCellStyle = dataGridViewCellStyle5;
             this.dataGridView1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dataGridView1.Location = new System.Drawing.Point(0, 0);
             this.dataGridView1.Name = "dataGridView1";
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("宋体", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridView1.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle6.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle6.Font = new System.Drawing.Font("宋体", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            dataGridViewCellStyle6.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridView1.RowHeadersDefaultCellStyle = dataGridViewCellStyle6;
             this.dataGridView1.RowTemplate.Height = 23;
             this.dataGridView1.Size = new System.Drawing.Size(271, 528);
             this.dataGridView1.TabIndex = 0;
@@ -4211,18 +4211,18 @@
             this.listView1.Font = new System.Drawing.Font("宋体", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.listView1.GridLines = true;
             this.listView1.Items.AddRange(new System.Windows.Forms.ListViewItem[] {
-            listViewItem1,
-            listViewItem2,
-            listViewItem3,
-            listViewItem4,
-            listViewItem5,
-            listViewItem6,
-            listViewItem7,
-            listViewItem8,
-            listViewItem9,
-            listViewItem10,
-            listViewItem11,
-            listViewItem12});
+            listViewItem13,
+            listViewItem14,
+            listViewItem15,
+            listViewItem16,
+            listViewItem17,
+            listViewItem18,
+            listViewItem19,
+            listViewItem20,
+            listViewItem21,
+            listViewItem22,
+            listViewItem23,
+            listViewItem24});
             this.listView1.Location = new System.Drawing.Point(0, 0);
             this.listView1.Name = "listView1";
             this.listView1.Size = new System.Drawing.Size(295, 556);
@@ -4243,6 +4243,7 @@
             // treeVData
             // 
             this.treeVData.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.treeVData.LineColor = System.Drawing.Color.Empty;
             this.treeVData.Location = new System.Drawing.Point(0, 0);
             this.treeVData.Name = "treeVData";
             this.treeVData.Size = new System.Drawing.Size(184, 559);
@@ -4253,28 +4254,28 @@
             this.uiStatusBar1.ForeColor = System.Drawing.SystemColors.ControlText;
             this.uiStatusBar1.Location = new System.Drawing.Point(0, 668);
             this.uiStatusBar1.Name = "uiStatusBar1";
-            uiStatusBarPanel1.BorderColor = System.Drawing.Color.Empty;
-            uiStatusBarPanel1.Key = "";
-            uiStatusBarPanel1.ProgressBarValue = 0;
-            uiStatusBarPanel1.Text = "当前任务：";
-            uiStatusBarPanel1.Width = 200;
-            uiStatusBarPanel2.BorderColor = System.Drawing.Color.Empty;
-            uiStatusBarPanel2.Key = "";
-            uiStatusBarPanel2.PanelType = Janus.Windows.UI.StatusBar.StatusBarPanelType.ProgressBar;
-            uiStatusBarPanel2.ProgressBarValue = 0;
-            uiStatusBarPanel3.BorderColor = System.Drawing.Color.Empty;
-            uiStatusBarPanel3.Key = "";
-            uiStatusBarPanel3.ProgressBarValue = 0;
-            uiStatusBarPanel3.Width = 300;
-            uiStatusBarPanel4.BorderColor = System.Drawing.Color.Empty;
-            uiStatusBarPanel4.Key = "";
-            uiStatusBarPanel4.ProgressBarValue = 0;
-            uiStatusBarPanel4.Width = 250;
+            uiStatusBarPanel5.BorderColor = System.Drawing.Color.Empty;
+            uiStatusBarPanel5.Key = "";
+            uiStatusBarPanel5.ProgressBarValue = 0;
+            uiStatusBarPanel5.Text = "当前任务：";
+            uiStatusBarPanel5.Width = 200;
+            uiStatusBarPanel6.BorderColor = System.Drawing.Color.Empty;
+            uiStatusBarPanel6.Key = "";
+            uiStatusBarPanel6.PanelType = Janus.Windows.UI.StatusBar.StatusBarPanelType.ProgressBar;
+            uiStatusBarPanel6.ProgressBarValue = 0;
+            uiStatusBarPanel7.BorderColor = System.Drawing.Color.Empty;
+            uiStatusBarPanel7.Key = "";
+            uiStatusBarPanel7.ProgressBarValue = 0;
+            uiStatusBarPanel7.Width = 300;
+            uiStatusBarPanel8.BorderColor = System.Drawing.Color.Empty;
+            uiStatusBarPanel8.Key = "";
+            uiStatusBarPanel8.ProgressBarValue = 0;
+            uiStatusBarPanel8.Width = 250;
             this.uiStatusBar1.Panels.AddRange(new Janus.Windows.UI.StatusBar.UIStatusBarPanel[] {
-            uiStatusBarPanel1,
-            uiStatusBarPanel2,
-            uiStatusBarPanel3,
-            uiStatusBarPanel4});
+            uiStatusBarPanel5,
+            uiStatusBarPanel6,
+            uiStatusBarPanel7,
+            uiStatusBarPanel8});
             this.uiStatusBar1.Size = new System.Drawing.Size(1028, 23);
             this.uiStatusBar1.TabIndex = 5;
             this.uiStatusBar1.VisualStyle = Janus.Windows.UI.VisualStyle.Office2007;

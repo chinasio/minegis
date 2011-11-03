@@ -16,6 +16,7 @@ using ESRI.ArcGIS.Display;
 using ESRI.ArcGIS.esriSystem;
 using ESRI.ArcGIS.Geoprocessor;
 using ESRI.ArcGIS.AnalysisTools;
+using ESRI.ArcGIS.DataSourcesFile;
 
 namespace CoastalGIS.MainGIS
 {
@@ -199,6 +200,17 @@ namespace CoastalGIS.MainGIS
             processor.Validate(process, true);
             processor.Execute(process, null);
             this.Dispose();
+
+            FileInfo fi = new FileInfo(textBox1.Text);
+            string pathDir = fi.Directory.FullName;
+            string name = fi.Name;
+            IWorkspaceFactory wsf = new ShapefileWorkspaceFactoryClass();
+            IFeatureWorkspace fws = wsf.OpenFromFile(pathDir, 0) as IFeatureWorkspace;
+            IFeatureClass featCls = fws.OpenFeatureClass(name);
+            IFeatureLayer layer = new FeatureLayerClass();
+            layer.FeatureClass = featCls;
+            layer.Name = featCls.AliasName;
+            m_mapControl.Map.AddLayer(layer as ILayer);
         }
 
         private void OverLayerForm_Load(object sender, EventArgs e)
