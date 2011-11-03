@@ -3831,6 +3831,7 @@
             this.dataGridView1.Size = new System.Drawing.Size(271, 528);
             this.dataGridView1.TabIndex = 0;
             this.dataGridView1.CellMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dataGridView1_CellMouseClick);
+            this.dataGridView1.CellEndEdit += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellEndEdit);
             this.dataGridView1.RowHeaderMouseDoubleClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dataGridView1_RowHeaderMouseDoubleClick);
             // 
             // TOCPanel
@@ -4189,7 +4190,7 @@
             this.lstBackLayer.ItemHeight = 12;
             this.lstBackLayer.Location = new System.Drawing.Point(3, 17);
             this.lstBackLayer.Name = "lstBackLayer";
-            this.lstBackLayer.Size = new System.Drawing.Size(150, 186);
+            this.lstBackLayer.Size = new System.Drawing.Size(150, 184);
             this.lstBackLayer.TabIndex = 0;
             // 
             // panel3
@@ -4242,7 +4243,6 @@
             // treeVData
             // 
             this.treeVData.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.treeVData.LineColor = System.Drawing.Color.Empty;
             this.treeVData.Location = new System.Drawing.Point(0, 0);
             this.treeVData.Name = "treeVData";
             this.treeVData.Size = new System.Drawing.Size(184, 559);
