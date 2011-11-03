@@ -14,6 +14,8 @@ using ESRI.ArcGIS.Geodatabase;
 using ESRI.ArcGIS.Geometry;
 using ESRI.ArcGIS.Display;
 using ESRI.ArcGIS.esriSystem;
+using ESRI.ArcGIS.Geoprocessor;
+using ESRI.ArcGIS.AnalysisTools;
 
 namespace CoastalGIS.MainGIS
 {
@@ -56,7 +58,7 @@ namespace CoastalGIS.MainGIS
 
         private void btnOK_Click(object sender, EventArgs e)
         {
-            FileInfo openpath = new FileInfo(textBox1.Text);
+            /*FileInfo openpath = new FileInfo(textBox1.Text);
             string ss = openpath.Directory.ToString();//Â·¾¶µÄ¸¸Ä¿Â¼
 
             ILayer pLayer;
@@ -146,7 +148,56 @@ namespace CoastalGIS.MainGIS
                         m_mapControl.Map.AddLayer(pOutputFeatLayer);
                         break;
                 }
+            }*/
+            //Geoprocessor processor = new Geoprocessor();
+            IFeatureLayer inputLyr = m_mapControl.Map.get_Layer(comboBox1.SelectedIndex) as IFeatureLayer;
+            IDataLayer2 dataLy = inputLyr as IDataLayer2;
+            IDatasetName inputdsName = dataLy.DataSourceName as IDatasetName;
+            IWorkspaceName inputws = inputdsName.WorkspaceName as IWorkspaceName;
+            string input=inputws.PathName+"\\"+inputLyr.Name;
+
+            IFeatureLayer overlayLyr = m_mapControl.Map.get_Layer(comboBox2.SelectedIndex) as IFeatureLayer;
+            IDataLayer2 dataOverlay = overlayLyr as IDataLayer2;
+            IDatasetName overlayDsName = dataOverlay.DataSourceName as IDatasetName;
+            IWorkspaceName overlayWs = overlayDsName.WorkspaceName;
+            string overlay =overlayWs.PathName+"\\"+overlayLyr.Name;
+
+            string output =textBox1.Text;
+
+            Geoprocessor processor = new Geoprocessor();
+            processor.OverwriteOutput = true;
+            IGPProcess process=null;
+            switch (listBox1.SelectedIndex)
+            {
+                case 0:
+                    Intersect intersect = new Intersect();
+                    intersect.in_features = "'" + input + "'" + ";" + "'" + overlay + "'";
+                    intersect.out_feature_class =output;
+                    intersect.output_type = "INPUT";
+                    intersect.join_attributes = "ALL";
+                    //intersect.cluster_tolerance=0.1;
+                    process = intersect;
+                    break;
+                case 1:
+                    Union union = new Union();
+                    union.in_features = "'" + input+"'" +";"+"'"+overlay+ "'";
+                    union.out_feature_class = @""+output;
+                    union.join_attributes = "ALL";
+                    //union.cluster_tolerance = 0.1;
+                    process = union;
+                    break;
+                case 2:
+                    Erase erase = new Erase();
+                    erase.in_features = "'" + input + "'";
+                    erase.erase_features = "'" + overlay + "'";
+                    erase.out_feature_class = output;
+                    //erase.cluster_tolerance = 0.1;
+                    process = erase;
+                    break;
+                    
             }
+            processor.Validate(process, true);
+            processor.Execute(process, null);
             this.Dispose();
         }
 

@@ -2601,6 +2601,17 @@ namespace CoastalGIS.MainGIS
             }
         }
 
+        private void dataGridView1_CellEndEdit(object sender, DataGridViewCellEventArgs e)
+        {
+            IFeatureLayer pLayer = m_layer as IFeatureLayer;
+            int oid = int.Parse(dataGridView1.Rows[e.RowIndex].Cells[0].Value.ToString());
+            IFeature feat = pLayer.FeatureClass.GetFeature(oid);
+            feat.set_Value(e.ColumnIndex, dataGridView1.Rows[e.RowIndex].Cells[e.ColumnIndex].Value);
+            feat.Store();
+            feat = null;
+            pLayer = null;
+        }
+
 
 
     }
