@@ -85,6 +85,9 @@
     <Reference Include="ESRI.ArcGIS.DisplayUI">
       <HintPath>..\..\..\..\..\Program Files\ArcGIS\DotNet\ESRI.ArcGIS.DisplayUI.dll</HintPath>
     </Reference>
+    <Reference Include="ESRI.ArcGIS.GeoAnalyst, Version=9.3.0.1770, Culture=neutral, PublicKeyToken=8fc3cc631e44ad86, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+    </Reference>
     <Reference Include="ESRI.ArcGIS.Geodatabase, Version=9.3.0.1770, Culture=neutral, PublicKeyToken=8fc3cc631e44ad86, processorArchitecture=MSIL" />
     <Reference Include="ESRI.ArcGIS.Geometry, Version=9.3.0.1770, Culture=neutral, PublicKeyToken=8fc3cc631e44ad86" />
     <Reference Include="ESRI.ArcGIS.Geoprocessor, Version=9.3.0.1770, Culture=neutral, PublicKeyToken=8fc3cc631e44ad86, processorArchitecture=MSIL" />
@@ -208,6 +211,7 @@
     <Compile Include="Class\ClipLayer.cs" />
     <Compile Include="Class\ControlsSynchronizer.cs" />
     <Compile Include="Class\AppConfig.cs" />
+    <Compile Include="Class\DEMCalc.cs" />
     <Compile Include="Class\FlashFeature.cs" />
     <Compile Include="Class\frmRasCau.cs">
       <SubType>Form</SubType>
